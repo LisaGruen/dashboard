@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DataBase from "./modules/DataBase";
+import GetData from "./modules/GetData";
 
 import "./App.scss";
 
@@ -12,7 +12,7 @@ function App() {
   const [taps, setTaps] = useState([]);
 
   const setInitalData = async () => {
-    const information = await DataBase();
+    const information = await GetData();
     console.log(information);
 
     setBarInformation(information.bar);
