@@ -1,39 +1,41 @@
 import React, { useState, useEffect } from "react";
-import MostPopularBeer from "./components/MostPopularBeer";
 import GetData from "./modules/GetData";
+import MostPopularBeer from "./components/MostPopularBeer";
 
 import "./App.scss";
 
 function App() {
-  const [barInformation, setBarInformation] = useState({});
-  const [bartenders, setBartenders] = useState([]);
+  const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
   const [serving, setServing] = useState([]);
-  const [storage, setStorage] = useState([]);
+  const [bartenders, setBartenders] = useState([]);
+  const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
   const [taps, setTaps] = useState([]);
 
   const setBarData = async () => {
     const information = await GetData();
-    setBarInformation(information.bar);
-    setBartenders(information.bartenders);
+    // setBartenders(information.bartenders);
     setQueue(information.queue);
-    setServing(information.serving);
-    setStorage(information.storage);
-    setTaps(information.taps);
+    // setServing(information.serving);
+    // setTaps(information.taps);
+    // setbarNameAndTime(information.bar);
+    // setStorage(information.storage);
   };
 
   useEffect(() => {
-    setBarData();
     const getDataIntervalID = setInterval(() => {
       setBarData();
-    }, 5000);
+    }, 3000);
     return () => clearInterval(getDataIntervalID);
+  }, []);
+
+  useEffect(() => {
+    setBarData();
   }, []);
 
   return (
     <div className="App">
-      <MostPopularBeer storage={storage} />
-      <h1>hi</h1>
+      <MostPopularBeer queue={queue} />
     </div>
   );
 }
