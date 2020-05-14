@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
-
+  const [listOfBeerNamesOrdered, setlistOfBeerNamesOrdered] = useState([]);
   useEffect(() => {
     let sth = props.queue.map((orderItem) => {
       const item = {
@@ -18,6 +18,16 @@ const MostPopularBeer = (props) => {
       )
     );
   }, [props.queue]);
+
+  useEffect(() => {
+    const namesOfg = orders.map((order) => order.orderList);
+    const beerNames = namesOfg.flat();
+
+    const something = namesOfg.filter((beerName) => beerName);
+    // console.log(something);
+  }, [orders]);
+
+  // console.log(listOfBeerNamesOrdered);
 
   return <div></div>;
 };
