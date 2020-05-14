@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MostPopularBeer from "./components/MostPopularBeer";
 import GetData from "./modules/GetData";
 
 import "./App.scss";
@@ -11,10 +12,8 @@ function App() {
   const [storage, setStorage] = useState([]);
   const [taps, setTaps] = useState([]);
 
-  const setInitalData = async () => {
+  const setBarData = async () => {
     const information = await GetData();
-    console.log(information);
-
     setBarInformation(information.bar);
     setBartenders(information.bartenders);
     setQueue(information.queue);
@@ -24,16 +23,16 @@ function App() {
   };
 
   useEffect(() => {
-    setInitalData();
+    setBarData();
     const getDataIntervalID = setInterval(() => {
-      setInitalData();
+      setBarData();
     }, 5000);
-
     return () => clearInterval(getDataIntervalID);
   }, []);
 
   return (
     <div className="App">
+      <MostPopularBeer storage={storage} />
       <h1>hi</h1>
     </div>
   );
