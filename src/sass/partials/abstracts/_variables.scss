@@ -1,0 +1,58 @@
+// ----------------------------------------
+// This file contains all custom properties
+// ----------------------------------------
+
+:root {
+	// typography settings
+	--base-font-size: 16px;
+	--primary-font: "Gotu", sans-serif;
+	--secondary-font: "Arial", sans-serif;
+	--line-height: 1.5;
+	--letter-spacing: 0.5rem;
+
+	// spacing
+	--gap: 1.5em;
+	--margin: 1rem;
+	--padding: 2em;
+
+	// animation
+	--transition: 0.3s ease-in-out;
+
+	// shadows
+	--box-shadow: 15px 15px 0px 0px;
+
+	// element colors
+	--text-body-color: var(--color-1-normal);
+	--text-h1-color: var(--color-1-normal);
+	--text-h2-color: var(--color-1-normal);
+
+	// link colors
+	--link-color: var(--color-3-normal);
+	--link-bg-color: var(--color-2-normal);
+	--link-color-visited: var(--color-3-normal);
+	--link-color-focus: var(--color-3-normal);
+	--link-color-hover: var(--color-3-normal);
+	--link-color-active: var(--color-2-normal);
+
+	//filters
+	--filter-main: grayscale(50%);
+
+	// HSL base color settings
+	// black
+	--base-color-1: 0;
+	--color-1-normal: hsla(var(--base-color-1) 0% 0% / 100%);
+	--color-1-gray: hsla(var(--base-color-1) 0% 70% / 100%);
+	--color-1-white: hsla(var(--base-color-1) 0% 100% / 100%);
+
+	// yellow
+	--base-color-2: 46;
+	--color-2-normal: hsla(var(--base-color-2) 100% 50% / 100%);
+
+	// blue
+	--base-color-3: 216;
+	--color-3-normal: hsla(var(--base-color-3) 65% 54% / 100%);
+
+	// pink
+	--base-color-4: 337;
+	--color-4-normal: hsla(var(--base-color-4) 100% 80% / 100%);
+}
