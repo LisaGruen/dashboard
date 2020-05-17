@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
-import MostPopularBeer from "./components/MostPopularBeer";
+import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 
 import "./App.scss";
 

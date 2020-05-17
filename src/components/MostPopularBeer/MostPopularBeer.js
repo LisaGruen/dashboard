@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./style.scss";
 
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
@@ -69,10 +70,28 @@ const MostPopularBeer = (props) => {
   }, [orders, props.beerTypes, props.tap, props.taps]);
 
   const topBeersDisplay = topThreebeers.map((beer) => (
-    <h1 key={beer.id}>{beer.name}</h1>
+    <div className="beer" key={beer.id}>
+      <h3>{beer.name}</h3>
+      <img
+        style={{ width: 100 }}
+        src={require(`../../assets/images/beer_mockups/${beer.name
+          .split(" ")
+          .join("")
+          .toLowerCase()}.png`)}
+        alt=""
+      />
+    </div>
   ));
 
-  return <div>{topBeersDisplay}</div>;
+  return (
+    <div className="peddeestal">
+      {topBeersDisplay}
+
+      <div className="secondPlace"></div>
+      <div className="firstPlace"></div>
+      <div className="thirdPlace"></div>
+    </div>
+  );
 };
 
 export default MostPopularBeer;
