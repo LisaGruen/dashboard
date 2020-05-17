@@ -1,0 +1,38 @@
+.peddeestal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 400px;
+}
+
+.secondPlace {
+  width: 100%;
+  height: 150px;
+  background-color: yellow;
+  grid-area: 2/1;
+  align-self: flex-end;
+}
+
+.thirdPlace {
+  width: 100%;
+  height: 100px;
+  background-color: yellow;
+  align-self: flex-end;
+}
+
+.firstPlace {
+  width: 100%;
+  height: 200px;
+  background-color: yellow;
+}
+
+.beer:first-of-type {
+  grid-area: 1/2;
+}
+
+.peddeestal .beer:nth-of-type(3) {
+  transform: translateY(100px);
+}
+
+.peddeestal .beer:nth-of-type(2) {
+  transform: translateY(50px);
+}
