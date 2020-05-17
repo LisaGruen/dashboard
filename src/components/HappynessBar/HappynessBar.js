@@ -24,7 +24,9 @@ export default function HappynessBar(props) {
     setbubbles(animateElements(bubbleCount, "bubble"));
   }, []);
 
-  const liquidRef = useRef(null);
+  const liquidRef = useRef();
+  const happynessRef = useRef();
+  const beerFoamref = useRef();
 
   useEffect(() => {
     const heightBeer =
@@ -40,9 +42,9 @@ export default function HappynessBar(props) {
         ? 0.2
         : 0;
 
-    console.log(heightBeer);
-
     liquidRef.current.style.setProperty("--percentedge", heightBeer);
+    beerFoamref.current.style.setProperty("--percentedge", heightBeer);
+    happynessRef.current.dataset.beerfill = heightBeer;
   }, [props.amountSold]);
 
   return (
@@ -51,13 +53,15 @@ export default function HappynessBar(props) {
       <h2 className=" hapLevel">Happyness level</h2>
 
       <div id="beaker">
-        <div className="beer-foam">{foam}</div>
+        <div className="beer-foam" ref={beerFoamref}>
+          {foam}
+        </div>
 
         <div id="liquid" ref={liquidRef}>
           {bubbles}
         </div>
 
-        <div className="happyness-level">
+        <div className="happyness-level" ref={happynessRef}>
           <div className="">amazing</div>
           <div className="">feeling lucky</div>
           <div className="">great</div>

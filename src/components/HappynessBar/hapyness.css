@@ -134,6 +134,9 @@ h2 {
 /* Foam */
 
 .beer-foam {
+  --max-height: 180px;
+  --percentedge: 0;
+  height: calc(180px * var(--percentedge));
   position: absolute;
   bottom: 10px;
 }
