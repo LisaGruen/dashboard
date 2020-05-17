@@ -53,9 +53,9 @@ h2 {
 }
 
 #liquid {
-  height: 0px;
-
-  height: 180px;
+  --max-height: 180px;
+  --percentedge: 0;
+  height: calc(180px * var(--percentedge));
   background-color: #edaf32;
   border: 10px solid #edaf32;
   border-radius: 0 0 20px 20px;
@@ -84,8 +84,6 @@ h2 {
   background-color: rgba(255, 255, 255, 0.2);
   bottom: 0;
   border-radius: 10px;
-  height: 20px;
-  width: 20px;
 }
 
 @keyframes bubble {

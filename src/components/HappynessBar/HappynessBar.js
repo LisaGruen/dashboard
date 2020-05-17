@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./hapyness.css";
-export default function HappynessBar() {
+export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState(null);
   const [foam, setfoam] = useState(null);
+  const [beerLevel, setbeerLevel] = useState(0);
   const bubbleCount = 5;
   const foamCount = 8;
 
@@ -23,6 +24,27 @@ export default function HappynessBar() {
     setbubbles(animateElements(bubbleCount, "bubble"));
   }, []);
 
+  const liquidRef = useRef(null);
+
+  useEffect(() => {
+    const heightBeer =
+      props.amountSold > 2500
+        ? 1
+        : props.amountSold > 2000
+        ? 0.9
+        : props.amountSold > 1500
+        ? 0.7
+        : props.amountSold > 1000
+        ? 0.4
+        : props.amountSold > 500
+        ? 0.2
+        : 0;
+
+    console.log(heightBeer);
+
+    liquidRef.current.style.setProperty("--percentedge", heightBeer);
+  }, [props.amountSold]);
+
   return (
     <div id="container">
       <div className="pour"></div>
@@ -31,7 +53,9 @@ export default function HappynessBar() {
       <div id="beaker">
         <div className="beer-foam">{foam}</div>
 
-        <div id="liquid">{bubbles}</div>
+        <div id="liquid" ref={liquidRef}>
+          {bubbles}
+        </div>
 
         <div className="happyness-level">
           <div className="">amazing</div>
