@@ -53,15 +53,13 @@ h2 {
 }
 
 #liquid {
-  --max-height: 180px;
-  --percentedge: 0;
-  height: calc(180px * var(--percentedge));
   background-color: #edaf32;
   border: 10px solid #edaf32;
   border-radius: 0 0 20px 20px;
   bottom: 0;
   overflow: hidden;
   width: 180px;
+  transition: height 0.3s linear;
 }
 
 #liquid:after {
@@ -134,9 +132,6 @@ h2 {
 /* Foam */
 
 .beer-foam {
-  --max-height: 180px;
-  --percentedge: 0;
-  height: calc(180px * var(--percentedge));
   position: absolute;
   bottom: 10px;
 }
@@ -149,10 +144,6 @@ h2 {
   height: 50px;
   border-radius: 30px;
   background-color: #fefefe;
-  animation: foaming;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  animation-iteration-count: 2;
 }
 @keyframes foaming {
   100% {

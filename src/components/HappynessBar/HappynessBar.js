@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+
 import "./hapyness.css";
 export default function HappynessBar(props) {
-  const [bubbles, setbubbles] = useState(null);
-  const [foam, setfoam] = useState(null);
+  const [bubbles, setbubbles] = useState([]);
+  const [foam, setfoam] = useState([]);
   const [beerLevel, setbeerLevel] = useState(0);
   const bubbleCount = 5;
   const foamCount = 8;
@@ -13,8 +15,8 @@ export default function HappynessBar(props) {
         key={i}
         className={`${elementClass} ${elementClass}${i}`}
         style={{
-          animationDelay: `${Math.random() * 5 + 0.3}s`,
-          animationDuration: `${Math.random() * 3 + 0.3}s`,
+          animationDelay: `${Math.random() * 5 + 0.2}s`,
+          animationDuration: `${Math.random() * 2}s`,
         }}></div>
     ));
   }
@@ -29,23 +31,40 @@ export default function HappynessBar(props) {
   const beerFoamref = useRef();
 
   useEffect(() => {
-    const heightBeer =
+    setbeerLevel(
       props.amountSold > 2500
-        ? 1
+        ? 180
         : props.amountSold > 2000
-        ? 0.9
+        ? 150
         : props.amountSold > 1500
-        ? 0.7
+        ? 120
         : props.amountSold > 1000
-        ? 0.4
+        ? 80
         : props.amountSold > 500
-        ? 0.2
-        : 0;
+        ? 40
+        : 0
+    );
 
-    liquidRef.current.style.setProperty("--percentedge", heightBeer);
-    beerFoamref.current.style.setProperty("--percentedge", heightBeer);
-    happynessRef.current.dataset.beerfill = heightBeer;
-  }, [props.amountSold]);
+    gsap.to(".beer-foam", { duration: 2, height: beerLevel });
+    let i = 0;
+    foam.map((element) =>
+      gsap.fromTo(
+        `.foam${i++}`,
+        {
+          y: "random(-3, 0)",
+        },
+        {
+          y: "random(0, 3)",
+          delay: "random(0.3, 3)",
+          duration: 4,
+          ease: "bounce",
+          repeat: 0,
+        }
+      )
+    );
+
+    gsap.to("#liquid", { duration: 2, height: beerLevel });
+  }, [beerLevel, bubbles, foam, props.amountSold]);
 
   return (
     <div id="container">
@@ -69,6 +88,7 @@ export default function HappynessBar(props) {
           <div className="">ok</div>
         </div>
       </div>
+      <h2>{props.amountSold}</h2>
     </div>
   );
 }
