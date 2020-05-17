@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer";
 
 import "./App.scss";
 
 function App() {
+  const [info, setInfo] = useState();
   const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
   const [serving, setServing] = useState([]);
@@ -14,6 +15,7 @@ function App() {
 
   const setBarData = async () => {
     const information = await GetData();
+    setInfo(information);
     // setBartenders(information.bartenders);
     setQueue(information.queue);
     // setServing(information.serving);
@@ -35,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <MostPopularBeer queue={queue} />
+      <MostPopularBeer currentQueue={queue} />
     </div>
   );
 }

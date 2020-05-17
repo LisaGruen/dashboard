@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from "react";
 
+let starting = true;
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
-  const [listOfBeerNamesOrdered, setlistOfBeerNamesOrdered] = useState([]);
+
   useEffect(() => {
-    let sth = props.queue.map((orderItem) => {
-      const item = {
-        id: orderItem.id,
-        orderList: orderItem.order,
-      };
-      return item;
+    setOrders((prevState) => {
+      if (prevState.length === 0) {
+        return props.currentQueue;
+      } else {
+        const differenceBetweenPropsAndPrevState = props.currentQueue.filter(
+          (item) => {
+            return !prevState.some((item2) => item.id === item2.id);
+          }
+        );
+        return [...prevState, ...differenceBetweenPropsAndPrevState];
+      }
     });
-
-    setOrders((prevState) =>
-      [...sth, ...prevState].filter(
-        (v, i, a) => a.findIndex((t) => t.id === v.id) === i
-      )
-    );
-  }, [props.queue]);
+  }, [props.currentQueue, props.prevQueue]);
 
   useEffect(() => {
-    const namesOfg = orders.map((order) => order.orderList);
-    const beerNames = namesOfg.flat();
-
-    const something = namesOfg.filter((beerName) => beerName);
-    // console.log(something);
+    const orderesBeers = orders.map((orderPart) => orderPart.order).flat();
+    console.log(orderesBeers);
   }, [orders]);
 
-  // console.log(listOfBeerNamesOrdered);
+  const sth = orders.map((item) => (
+    <h1 key={item.id}>
+      {item.id}, {item.order}
+    </h1>
+  ));
 
-  return <div></div>;
+  return <div>{sth}</div>;
 };
 
-MostPopularBeer.defaultProps = {
-  queue: [],
-};
+MostPopularBeer.defaultProps = {};
 
 export default MostPopularBeer;
