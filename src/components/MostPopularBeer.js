@@ -27,11 +27,16 @@ const MostPopularBeer = (props) => {
   useEffect(() => {
     //get the list of ordered beers
     const orderedBeers = orders.map((orderPart) => orderPart.order).flat();
-    //get the beer names form data fetch and create beer object
-    const beers = props.taps.map((beerCurrentlyServed) => ({
-      name: beerCurrentlyServed.beer,
+    //gets unique names of beer
+    const beerNames = [...new Set(props.taps.map((beerName) => beerName.beer))];
+
+    let i = 0;
+    // create object for each beer name
+    const beers = beerNames.map((beerName) => ({
+      id: i++,
+      name: beerName,
       count: 0,
-      levelOntap: beerCurrentlyServed.level,
+      levelOntap: 2500,
     }));
 
     beers.forEach((beer) => {
@@ -40,6 +45,13 @@ const MostPopularBeer = (props) => {
       const sameBeerNameRepeat = orderedBeers.filter(
         (beerNames) => beerNames === beer.name
       );
+
+      //get the level on tap for each beer smallest amount
+      const levelOnTap = props.taps
+        .filter((beerTap) => beer.name === beerTap.beer)
+        .sort((a, b) => a.level - b.level);
+
+      beer.levelOntap = levelOnTap[0].level;
       beer.count = sameBeerNameRepeat.length;
     });
 
@@ -56,9 +68,11 @@ const MostPopularBeer = (props) => {
     settopThreebeers(beers.slice(0, 3));
   }, [orders, props.beerTypes, props.tap, props.taps]);
 
-//  const topBeersDisplay = topThreebeers.map(beer=> h1)
+  const topBeersDisplay = topThreebeers.map((beer) => (
+    <h1 key={beer.id}>{beer.name}</h1>
+  ));
 
-  return <div></div>;
+  return <div>{topBeersDisplay}</div>;
 };
 
 export default MostPopularBeer;

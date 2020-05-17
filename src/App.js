@@ -7,7 +7,6 @@ import "./App.scss";
 function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
-  const [info, setInfo] = useState();
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
   const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
@@ -18,6 +17,9 @@ function App() {
     // setBartenders(information.bartenders);
     setQueue(barInformation.queue);
     setTaps(barInformation.taps);
+
+    // const testrr = barInformation.taps;
+    // setTaps();
     // setServing(information.serving);
     // setTaps(information.taps);
     // setStorage(information.storage);
