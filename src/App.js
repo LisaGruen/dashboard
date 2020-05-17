@@ -52,7 +52,7 @@ function App() {
         taps={taps}
         setamountSold={setamountSold}
       />
-      <HappynessBar />
+      <HappynessBar amountSold={amountSold} />
     </div>
   );
 }
