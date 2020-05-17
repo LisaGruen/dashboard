@@ -28,6 +28,8 @@ const MostPopularBeer = (props) => {
   useEffect(() => {
     //get the list of ordered beers
     const orderedBeers = orders.map((orderPart) => orderPart.order).flat();
+    props.setamountSold(orderedBeers.length * 50);
+
     //gets unique names of beer
     const beerNames = [...new Set(props.taps.map((beerName) => beerName.beer))];
 
@@ -67,7 +69,7 @@ const MostPopularBeer = (props) => {
 
     //set top three
     settopThreebeers(beers.slice(0, 3));
-  }, [orders, props.beerTypes, props.tap, props.taps]);
+  }, [orders, props, props.beerTypes, props.tap, props.taps]);
 
   const topBeersDisplay = topThreebeers.map((beer) => (
     <div className="beer" key={beer.id}>
