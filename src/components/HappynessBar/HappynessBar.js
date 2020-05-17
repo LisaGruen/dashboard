@@ -2,19 +2,25 @@ import React, { useEffect, useState } from "react";
 import "./hapyness.css";
 export default function HappynessBar() {
   const [bubbles, setbubbles] = useState(null);
-  const n = 5;
+  const [foam, setfoam] = useState(null);
+  const bubbleCount = 5;
+  const foamCount = 8;
+
+  function animateElements(count, elementClass) {
+    return [...Array(count)].map((e, i) => (
+      <div
+        key={i}
+        className={`${elementClass} ${elementClass}${i}`}
+        style={{
+          animationDelay: `${Math.random() * 5 + 0.3}s`,
+          animationDuration: `${Math.random() * 3 + 0.3}s`,
+        }}></div>
+    ));
+  }
+
   useEffect(() => {
-    setbubbles(
-      [...Array(n)].map((e, i) => (
-        <div
-          key={i}
-          className={`bubble bubble${i}`}
-          style={{
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${Math.random() * 3}s`,
-          }}></div>
-      ))
-    );
+    setfoam(animateElements(foamCount, "foam"));
+    setbubbles(animateElements(bubbleCount, "bubble"));
   }, []);
 
   return (
@@ -23,15 +29,7 @@ export default function HappynessBar() {
       <h2 className=" hapLevel">Happyness level</h2>
 
       <div id="beaker">
-        <div className="beer-foam">
-          <div className="foam-1"></div>
-          <div className="foam-2"></div>
-          <div className="foam-3"></div>
-          <div className="foam-4"></div>
-          <div className="foam-5"></div>
-          <div className="foam-6"></div>
-          <div className="foam-7"></div>
-        </div>
+        <div className="beer-foam">{foam}</div>
 
         <div id="liquid">{bubbles}</div>
 

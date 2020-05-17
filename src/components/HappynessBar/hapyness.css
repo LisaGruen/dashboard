@@ -113,23 +113,23 @@ h2 {
   }
 }
 
-.bubble1 {
+.bubble0 {
   left: 10px;
 }
 
-.bubble2 {
+.bubble1 {
   left: 50px;
 }
 
-.bubble3 {
+.bubble2 {
   left: 100px;
 }
 
-.bubble4 {
+.bubble3 {
   left: 130px;
 }
 
-.bubble5 {
+.bubble4 {
   left: 170px;
 }
 
@@ -140,13 +140,7 @@ h2 {
   bottom: 10px;
 }
 
-.foam-1,
-.foam-2,
-.foam-3,
-.foam-4,
-.foam-5,
-.foam-6,
-.foam-7 {
+.foam {
   float: left;
   position: absolute;
   z-index: 999;
@@ -154,34 +148,48 @@ h2 {
   height: 50px;
   border-radius: 30px;
   background-color: #fefefe;
+  animation: foaming;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
 }
-.foam-1 {
+@keyframes foaming {
+  100% {
+    transform: translateY(10px);
+  }
+}
+.foam0 {
   top: -30px;
   left: -10px;
 }
-.foam-2 {
+.foam1 {
   top: -35px;
   left: 20px;
 }
-.foam-3 {
+.foam2 {
   top: -25px;
   left: 50px;
 }
-.foam-4 {
+.foam3 {
   top: -35px;
   left: 80px;
 }
-.foam-5 {
+.foam4 {
   top: -30px;
   left: 110px;
 }
-.foam-6 {
+.foam5 {
   top: -20px;
   left: 140px;
 }
-.foam-7 {
+.foam6 {
   top: -30px;
   left: 160px;
+}
+
+.foam7 {
+  top: -30px;
+  left: 170px;
 }
 
 /* Drunk Text */
