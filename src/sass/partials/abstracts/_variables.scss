@@ -14,16 +14,11 @@
   --small-gap: 1em;
   --gap: 1.5em;
   --margin: 1rem;
+  --margin-large: 2rem;
   --padding: 2em;
-
-  //border-radius
-  --border-radius: 30px;
 
   // animation
   --transition: 0.3s ease-in-out;
-
-  // shadows
-  --box-shadow: 15px 15px 0px 0px;
 
   // element colors
   --text-body-color: var(--color-1-normal);
@@ -66,4 +61,13 @@
   // Yellow #FAFFC7
   --base-color-4: 65;
   --color-6-normal: hsla(var(--base-color-4) 100% 89% / 100%);
+  --color-6-lighter: hsla(var(--base-color-4) 100% 95% / 100%);
+
+  // box shadow
+  --box-shadow-neo: 23px 23px 46px var(--shadow-2-normal),
+    -23px -23px 46px var(--shadow-2-normal);
+  --box-shadow: 15px 15px 0px 0px;
+
+  //border-radius
+  --border-radius: 30px;
 }

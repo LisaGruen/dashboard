@@ -1,15 +1,13 @@
-body {
-  background-color: #0e83cd;
-}
-
-h2 {
-  color: whiteSmoke;
-  bottom: 0;
-  z-index: 10;
+.hapcontainer {
+  margin: var(--margin-large);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo);
+  border-radius: var(--border-radius);
 }
 
 .happyText {
   opacity: 0;
+  font-family: var(--secondary-font);
 }
 
 .happyTextAnimation {
@@ -21,7 +19,7 @@ h2 {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -54,6 +52,7 @@ h2 {
 #container .happyness-level > div {
   margin: 1.2rem 0;
   position: relative;
+  color: var(--color-6-lighter);
 }
 
 #beaker {

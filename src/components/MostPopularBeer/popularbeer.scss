@@ -20,13 +20,7 @@
 
   padding: var(--padding);
 
-  box-shadow: 23px 23px 46px var(--shadow-2-normal),
-    -23px -23px 46px var(--shadow-2-normal);
-
-  h2 {
-    padding-bottom: var(--padding);
-    color: var(--color-1-darker);
-  }
+  box-shadow: var(--box-shadow-neo);
 }
 
 .stage {
@@ -52,15 +46,6 @@
 .firstPlace {
   height: 150px;
   font-size: 5rem;
-}
-
-.beer {
-  h3 {
-    margin-bottom: var(--small-gap);
-    color: var(--color-6-normal);
-    font-family: var(--primary-font);
-    text-align: center;
-  }
 }
 
 .beer:first-of-type {

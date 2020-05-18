@@ -8,27 +8,31 @@
 
 // text styles
 body {
-	@include flexCenter(center, column);
-	font-family: var(--primary-font);
+  @include flexCenter(center, column);
+  font-family: var(--primary-font);
 }
 
 p {
-	font-family: var(--primary-font);
-	line-height: var(--line-height);
-	color: var(--text-body-color);
+  font-family: var(--primary-font);
+  line-height: var(--line-height);
+  color: var(--text-body-color);
 }
 
 h1 {
-	font-family: var(--primary-font);
-	color: var(--text-h1-color);
+  font-family: var(--primary-font);
+  color: var(--text-h1-color);
 }
 
 h2 {
-	font-family: var(--primary-font);
-	color: var(--text-h2-color);
+  font-family: var(--primary-font);
+  padding-bottom: var(--padding);
+  color: var(--color-1-darker);
+  text-align: center;
 }
 
 h3 {
-	font-family: var(--primary-font);
-	color: var(--text-h3-color);
+  font-family: var(--primary-font);
+  margin-bottom: var(--small-gap);
+  color: var(--color-6-normal);
+  text-align: center;
 }
