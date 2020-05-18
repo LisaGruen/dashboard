@@ -6,25 +6,19 @@ export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState([]);
   const [foam, setfoam] = useState([]);
   const [beerLevel, setbeerLevel] = useState(0);
-  const bubbleCount = 5;
-  const foamCount = 8;
+  let bubbleCount = 5;
+  let foamCount = 6;
 
   function animateElements(count, elementClass) {
     return [...Array(count)].map((e, i) => (
-      <div
-        key={i}
-        className={`${elementClass} ${elementClass}${i}`}
-        style={{
-          animationDelay: `${Math.random() * 5 + 0.2}s`,
-          animationDuration: `${Math.random() * 2}s`,
-        }}></div>
+      <div key={i} className={`${elementClass} ${elementClass}${i}`}></div>
     ));
   }
 
   useEffect(() => {
     setfoam(animateElements(foamCount, "foam"));
     setbubbles(animateElements(bubbleCount, "bubble"));
-  }, []);
+  }, [bubbleCount, foamCount]);
 
   const liquidRef = useRef();
   const happynessRef = useRef();
@@ -33,38 +27,51 @@ export default function HappynessBar(props) {
   useEffect(() => {
     setbeerLevel(
       props.amountSold > 2500
-        ? 180
+        ? 1
         : props.amountSold > 2000
-        ? 150
+        ? 0.8
         : props.amountSold > 1500
-        ? 120
+        ? 0.6
         : props.amountSold > 1000
-        ? 80
+        ? 0.4
         : props.amountSold > 500
-        ? 40
+        ? 0.2
         : 0
     );
+  }, [props.amountSold]);
 
-    gsap.to(".beer-foam", { duration: 2, height: beerLevel });
-    let i = 0;
+  //animations
+  useEffect(() => {
+    let f = 0;
+    const maxHeihtOfLiquid = 260;
+    //beer liquid animation
+    gsap.to("#liquid", { duration: 1, height: maxHeihtOfLiquid * beerLevel });
+    //beer foam bubbles animation
+
     foam.map((element) =>
       gsap.fromTo(
-        `.foam${i++}`,
+        `.foam${f++}`,
         {
-          y: "random(-3, 0)",
+          y: 2,
+          webkitFilter: "blur(1px)",
         },
         {
-          y: "random(0, 3)",
+          y: -2,
           delay: "random(0.3, 3)",
-          duration: 4,
+          duration: "random(0.3, 2)",
           ease: "bounce",
-          repeat: 0,
+          webkitFilter: "blur(1.5px)",
+          repeat: 3,
         }
       )
     );
 
-    gsap.to("#liquid", { duration: 2, height: beerLevel });
-  }, [beerLevel, bubbles, foam, props.amountSold]);
+    //beer foam lifting up animation
+    gsap.to(".beer-foam", {
+      duration: 1.2,
+      height: maxHeihtOfLiquid * beerLevel,
+    });
+  }, [beerLevel, bubbleCount, bubbles, foam]);
 
   return (
     <div id="container">

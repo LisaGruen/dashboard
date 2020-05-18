@@ -38,7 +38,7 @@ h2 {
 }
 
 #container .happyness-level > div {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
   position: relative;
 }
 
@@ -46,7 +46,7 @@ h2 {
   border: 10px solid #fff;
   border-top: 0;
   border-radius: 0 0 30px 30px;
-  height: 200px;
+  height: 260px;
   left: 14px;
   bottom: 0;
   width: 200px;
@@ -59,7 +59,6 @@ h2 {
   bottom: 0;
   overflow: hidden;
   width: 180px;
-  transition: height 0.3s linear;
 }
 
 #liquid:after {
@@ -111,22 +110,32 @@ h2 {
 
 .bubble0 {
   left: 10px;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
 }
 
 .bubble1 {
   left: 50px;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
 }
 
 .bubble2 {
   left: 100px;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
 }
 
 .bubble3 {
   left: 130px;
+  animation-duration: 4s;
+  animation-delay: 0s;
 }
 
 .bubble4 {
   left: 170px;
+  animation-duration: 2s;
+  animation-delay: 0.7s;
 }
 
 /* Foam */
@@ -144,11 +153,7 @@ h2 {
   height: 50px;
   border-radius: 30px;
   background-color: #fefefe;
-}
-@keyframes foaming {
-  100% {
-    transform: translateY(10px);
-  }
+  filter: blur(1px);
 }
 .foam0 {
   top: -30px;
@@ -159,7 +164,7 @@ h2 {
   left: 20px;
 }
 .foam2 {
-  top: -25px;
+  top: -30px;
   left: 50px;
 }
 .foam3 {
@@ -171,18 +176,18 @@ h2 {
   left: 110px;
 }
 .foam5 {
-  top: -20px;
+  top: -31px;
   left: 140px;
 }
 .foam6 {
   top: -30px;
   left: 160px;
 }
-
+/* 
 .foam7 {
   top: -30px;
   left: 170px;
-}
+} */
 
 /* Drunk Text */
 
