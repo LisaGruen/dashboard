@@ -43,7 +43,7 @@ export default function HappynessBar(props) {
   //animations
   useEffect(() => {
     let f = 0;
-    const maxHeihtOfLiquid = 260;
+    const maxHeihtOfLiquid = 240;
     //beer liquid animation
     gsap.to("#liquid", { duration: 1, height: maxHeihtOfLiquid * beerLevel });
     //beer foam bubbles animation
