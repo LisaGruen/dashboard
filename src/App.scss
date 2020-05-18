@@ -1,4 +1,4 @@
-@import "./sass/partials/base/base";
-@import "./sass/partials/base/typography";
-@import "./sass/partials/abstracts/variables";
-@import "./sass/partials/abstracts/mixins";
+.App {
+  display: flex;
+  align-items: baseline;
+}
