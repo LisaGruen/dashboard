@@ -1,13 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// variables and mixins
+@import "sass/partials/abstracts/variables";
+@import "sass/partials/abstracts/mixins";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+// setup base styles
+@import "sass/partials/base/base";
+@import "sass/partials/base/typography";
+
+// layout for sections
+@import "sass/partials/layout/header";
+@import "sass/partials/layout/footer";
+@import "sass/partials/layout/main";
+@import "sass/partials/layout/navigation";
+@import "sass/partials/layout/grid";
+
+// components
+@import "sass/partials/components/buttons";
+@import "sass/partials/components/form";
