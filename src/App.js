@@ -52,7 +52,9 @@ function App() {
         taps={taps}
         setamountSold={setamountSold}
       />
-      <HappynessBar amountSold={amountSold} />
+      <div className="hapcontainer">
+        <HappynessBar amountSold={amountSold} />
+      </div>
     </div>
   );
 }

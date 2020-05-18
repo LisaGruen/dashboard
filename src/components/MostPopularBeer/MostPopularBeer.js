@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
+import "./popularbeer.scss";
 
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
@@ -86,12 +86,16 @@ const MostPopularBeer = (props) => {
   ));
 
   return (
-    <div className="peddeestal">
-      {topBeersDisplay}
+    <div className="WRAPPER">
+      <h2>YOUR TOP PICKS</h2>
 
-      <div className="secondPlace"></div>
-      <div className="firstPlace"></div>
-      <div className="thirdPlace"></div>
+      <div className="peddeestal">
+        {topBeersDisplay}
+
+        <div className="secondPlace stage">2</div>
+        <div className="firstPlace stage">1</div>
+        <div className="thirdPlace stage">3</div>
+      </div>
     </div>
   );
 };
