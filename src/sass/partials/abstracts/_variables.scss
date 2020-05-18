@@ -5,7 +5,7 @@
 :root {
 	// typography settings
 	--base-font-size: 16px;
-	--primary-font: "Gotu", sans-serif;
+	--primary-font: "Karla", sans-serif;
 	--secondary-font: "Arial", sans-serif;
 	--line-height: 1.5;
 	--letter-spacing: 0.5rem;
@@ -38,21 +38,27 @@
 	--filter-main: grayscale(50%);
 
 	// HSL base color settings
-	// black
-	--base-color-1: 0;
-	--color-1-normal: hsla(var(--base-color-1) 0% 0% / 100%);
-	--color-1-gray: hsla(var(--base-color-1) 0% 70% / 100%);
-	--color-1-white: hsla(var(--base-color-1) 0% 100% / 100%);
+	// Dark blue #34344D
+	--base-color-1: 240;
+	--color-1-normal: hsla(var(--base-color-1) 19% 25% / 100%);
 
-	// yellow
-	--base-color-2: 46;
-	--color-2-normal: hsla(var(--base-color-2) 100% 50% / 100%);
+	// Purple #504ECC
+	--base-color-2: 241;
+	--color-2-normal: hsla(var(--base-color-2) 55% 55% / 100%);
 
-	// blue
-	--base-color-3: 216;
-	--color-3-normal: hsla(var(--base-color-3) 65% 54% / 100%);
+	// Gray #5C665A
+	--base-color-3: 110;
+	--color-3-normal: hsla(var(--base-color-3) 6% 38% / 100%);
 
-	// pink
-	--base-color-4: 337;
-	--color-4-normal: hsla(var(--base-color-4) 100% 80% / 100%);
+	// Green #68CC4E
+	--base-color-4: 108;
+	--color-4-normal: hsla(var(--base-color-4) 55% 55% / 100%);
+
+	// Red #FF6961
+	--base-color-4: 3;
+	--color-4-normal: hsla(var(--base-color-4) 100% 69% / 100%);
+
+	// Yellow #FAFFC7
+	--base-color-4: 65;
+	--color-4-normal: hsla(var(--base-color-4) 100% 89% / 100%);
 }
