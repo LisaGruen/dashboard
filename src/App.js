@@ -1,40 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
+import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 
 import "./App.scss";
 
 function App() {
-  const [barInformation, setBarInformation] = useState({});
-  const [bartenders, setBartenders] = useState([]);
+  const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
   const [serving, setServing] = useState([]);
-  const [storage, setStorage] = useState([]);
+  const [bartenders, setBartenders] = useState([]);
+  const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
   const [taps, setTaps] = useState([]);
 
-  const setInitalData = async () => {
-    const information = await GetData();
-    console.log(information);
+  const setBarData = async () => {
+    const barInformation = await GetData();
+    // setBartenders(information.bartenders);
+    setQueue(barInformation.queue);
+    setTaps(barInformation.taps);
 
-    setBarInformation(information.bar);
-    setBartenders(information.bartenders);
-    setQueue(information.queue);
-    setServing(information.serving);
-    setStorage(information.storage);
-    setTaps(information.taps);
+    // const testrr = barInformation.taps;
+    // setTaps();
+    // setServing(information.serving);
+    // setTaps(information.taps);
+    // setStorage(information.storage);
   };
 
+  ///initial data fetch
   useEffect(() => {
-    setInitalData();
-    const getDataIntervalID = setInterval(() => {
-      setInitalData();
-    }, 5000);
+    setBarData();
+    const setInitialData = async () => {
+      const barInformation = await GetData("");
+      setbarNameAndTime(barInformation.bar);
+    };
+    setInitialData();
+  }, []);
 
+  //recuring data fetch
+  useEffect(() => {
+    const getDataIntervalID = setInterval(() => {
+      setBarData();
+    }, 3000);
     return () => clearInterval(getDataIntervalID);
   }, []);
 
   return (
     <div className="App">
-      <h1>hi</h1>
+      <MostPopularBeer currentQueue={queue} taps={taps} />
     </div>
   );
 }
