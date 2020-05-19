@@ -3,6 +3,22 @@
   padding: var(--padding);
   box-shadow: var(--box-shadow-neo);
   border-radius: var(--border-radius);
-  height: 100px;
-  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.beerBg {
+  background-image: url("../../assets/images/graphics/clooud.svg");
+  height: 200px;
+  width: 400px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    color: var(--color-2-normal);
+  }
 }

@@ -10,7 +10,6 @@ export default React.memo(function MostPopularBeer(props) {
     setOrders((prevState) => {
       if (prevState.length === 0) {
         //set initial orders
-
         return props.currentQueue;
       } else {
         //get orders that prev state doesn't have
@@ -19,7 +18,6 @@ export default React.memo(function MostPopularBeer(props) {
             return !prevState.some((item2) => item.id === item2.id);
           }
         );
-
         //set the state and only add the unique orders
         return [...prevState, ...differenceBetweenPropsAndPrevState];
       }
