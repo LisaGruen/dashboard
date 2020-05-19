@@ -3,62 +3,71 @@
 // ----------------------------------------
 
 :root {
-	// typography settings
-	--base-font-size: 16px;
-	--primary-font: "Karla", sans-serif;
-	--secondary-font: "Arial", sans-serif;
-	--line-height: 1.5;
-	--letter-spacing: 0.5rem;
+  // typography settings
+  --base-font-size: 16px;
+  --primary-font: "Karla", sans-serif;
+  --secondary-font: "Arial", sans-serif;
+  --line-height: 1.5;
+  --letter-spacing: 0.5rem;
 
-	// spacing
-	--gap: 1.5em;
-	--margin: 1rem;
-	--padding: 2em;
+  // spacing
+  --small-gap: 1em;
+  --gap: 1.5em;
+  --margin: 1rem;
+  --margin-large: 2rem;
+  --padding: 2em;
 
-	// animation
-	--transition: 0.3s ease-in-out;
+  // animation
+  --transition: 0.3s ease-in-out;
 
-	// shadows
-	--box-shadow: 15px 15px 0px 0px;
+  // element colors
+  --text-body-color: var(--color-1-normal);
+  --text-h1-color: var(--color-1-normal);
+  --text-h2-color: var(--color-1-normal);
 
-	// element colors
-	--text-body-color: var(--color-1-normal);
-	--text-h1-color: var(--color-1-normal);
-	--text-h2-color: var(--color-1-normal);
+  // link colors
+  --link-color: var(--color-3-normal);
+  --link-bg-color: var(--color-2-normal);
+  --link-color-visited: var(--color-3-normal);
+  --link-color-focus: var(--color-3-normal);
+  --link-color-hover: var(--color-3-normal);
+  --link-color-active: var(--color-2-normal);
 
-	// link colors
-	--link-color: var(--color-3-normal);
-	--link-bg-color: var(--color-2-normal);
-	--link-color-visited: var(--color-3-normal);
-	--link-color-focus: var(--color-3-normal);
-	--link-color-hover: var(--color-3-normal);
-	--link-color-active: var(--color-2-normal);
+  //filters
+  --filter-main: grayscale(50%);
 
-	//filters
-	--filter-main: grayscale(50%);
+  // HSL base color settings
+  // Dark blue #34344D
+  --base-color-1: 240;
+  --color-1-normal: hsla(var(--base-color-1) 19% 25% / 100%);
+  --color-1-darker: hsla(var(--base-color-1) 0% 5% / 100%);
 
-	// HSL base color settings
-	// Dark blue #34344D
-	--base-color-1: 240;
-	--color-1-normal: hsla(var(--base-color-1) 19% 25% / 100%);
+  // Purple #504ECC
+  --base-color-2: 241;
+  --color-2-normal: hsla(var(--base-color-2) 55% 55% / 100%);
+  --shadow-2-normal: hsla(var(--base-color-2) 45% 45% / 100%);
+  // Gray #5C665A
+  --base-color-3: 110;
+  --color-3-normal: hsla(var(--base-color-3) 6% 38% / 100%);
 
-	// Purple #504ECC
-	--base-color-2: 241;
-	--color-2-normal: hsla(var(--base-color-2) 55% 55% / 100%);
+  // Green #68CC4E
+  --base-color-4: 108;
+  --color-4-normal: hsla(var(--base-color-4) 55% 55% / 100%);
 
-	// Gray #5C665A
-	--base-color-3: 110;
-	--color-3-normal: hsla(var(--base-color-3) 6% 38% / 100%);
+  // Red #FF6961
+  --base-color-4: 3;
+  --color-5-normal: hsla(var(--base-color-4) 100% 69% / 100%);
 
-	// Green #68CC4E
-	--base-color-4: 108;
-	--color-4-normal: hsla(var(--base-color-4) 55% 55% / 100%);
+  // Yellow #FAFFC7
+  --base-color-4: 65;
+  --color-6-normal: hsla(var(--base-color-4) 100% 89% / 100%);
+  --color-6-lighter: hsla(var(--base-color-4) 100% 95% / 100%);
 
-	// Red #FF6961
-	--base-color-4: 3;
-	--color-4-normal: hsla(var(--base-color-4) 100% 69% / 100%);
+  // box shadow
+  --box-shadow-neo: 23px 23px 46px var(--shadow-2-normal),
+    -23px -23px 46px var(--shadow-2-normal);
+  --box-shadow: 15px 15px 0px 0px;
 
-	// Yellow #FAFFC7
-	--base-color-4: 65;
-	--color-4-normal: hsla(var(--base-color-4) 100% 89% / 100%);
+  //border-radius
+  --border-radius: 30px;
 }
