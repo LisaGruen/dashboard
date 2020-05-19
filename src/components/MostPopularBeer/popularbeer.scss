@@ -1,0 +1,62 @@
+@import "../../sass/partials/abstracts/mixins";
+
+.peddeestal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 450px;
+
+  div {
+    @include flexCenter(center, center);
+    flex-direction: column;
+  }
+}
+
+.WRAPPER {
+  @include flexCenter(center, center);
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  background: var(--color-2-normal);
+
+  padding: var(--padding);
+
+  box-shadow: var(--box-shadow-neo);
+}
+
+.stage {
+  width: 100%;
+  background-color: var(--color-6-normal);
+  align-self: flex-end;
+  color: var(--text-h2-color);
+  @include flexCenter(center, center);
+}
+
+.secondPlace {
+  height: 100px;
+  grid-area: 2/1;
+  font-size: 3rem;
+}
+
+.thirdPlace {
+  height: 80px;
+  font-size: 3rem;
+  align-self: flex-end;
+}
+
+.firstPlace {
+  height: 150px;
+  font-size: 5rem;
+}
+
+.beer:first-of-type {
+  grid-area: 1/2;
+  transform: translateY(-5px);
+}
+
+.peddeestal .beer:nth-of-type(3) {
+  transform: translateY(65px);
+}
+
+.peddeestal .beer:nth-of-type(2) {
+  transform: translateY(45px);
+}

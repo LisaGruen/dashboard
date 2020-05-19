@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 import Atwork from "./components/bartender.js";
+import HappynessBar from "./components/HappynessBar/HappynessBar";
 
 import "./App.scss";
 
 function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
+  const [amountSold, setamountSold] = useState(0);
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
   const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
@@ -46,9 +48,14 @@ function App() {
 
   return (
     <div className="App">
-      <MostPopularBeer currentQueue={queue} taps={taps} />
-
       <Atwork bartenderName={bartenders} servingCustomer={bartenders} />
+      <MostPopularBeer
+        currentQueue={queue}
+        taps={taps}
+        setamountSold={setamountSold}
+      />
+
+      <HappynessBar amountSold={amountSold} />
     </div>
   );
 }
