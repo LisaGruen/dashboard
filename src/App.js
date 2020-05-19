@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
+import Atwork from "./components/bartender.js";
 
 import "./App.scss";
 
@@ -46,6 +47,8 @@ function App() {
   return (
     <div className="App">
       <MostPopularBeer currentQueue={queue} taps={taps} />
+
+      <Atwork bartenderName={bartenders} servingCustomer={bartenders} />
     </div>
   );
 }
