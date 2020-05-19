@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import CreateElements from "../../modules/CreateElements";
+import HappyAnimation from "./HappyAnimation";
 
 import "./hapyness.scss";
 export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState([]);
   const [foam, setfoam] = useState([]);
   const [maxBeakerHeight, setmaxBeakerHeight] = useState(0);
+  const [isHappyMeterfull, setisHappyMeterfull] = useState(false);
   const bubbleCount = 5;
   const foamCount = 6;
 
@@ -27,6 +29,7 @@ export default function HappynessBar(props) {
     let maxHeihtOfLiquid = props.amountSold;
     if (props.amountSold > maxBeakerHeight * 10) {
       maxHeihtOfLiquid = maxBeakerHeight * 10;
+      setisHappyMeterfull(true);
     }
 
     //beer liquid animation
@@ -63,7 +66,7 @@ export default function HappynessBar(props) {
   return (
     <div className="hapcontainer">
       <h2>HOW ARE WE TODAY?</h2>
-
+      <HappyAnimation isHappyMeterfull={isHappyMeterfull} />
       <div id="container">
         <div className="pour"></div>
         {/* <h2 className=" hapLevel">Happyness level</h2> */}
