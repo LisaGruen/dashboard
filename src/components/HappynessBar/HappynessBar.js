@@ -5,35 +5,41 @@ import "./hapyness.scss";
 export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState([]);
   const [foam, setfoam] = useState([]);
+  const [maxBeakerHeight, setmaxBeakerHeight] = useState(0);
   let bubbleCount = 5;
   let foamCount = 6;
 
-  function animateElements(count, elementClass) {
+  //get the height
+  const beaker = useRef();
+  useEffect(() => {
+    setmaxBeakerHeight(beaker.current.clientHeight);
+  }, [maxBeakerHeight]);
+
+  //Creates foam bubbles and beer bubbles
+  function createBeerElements(count, elementClass) {
     return [...Array(count)].map((e, i) => (
       <div key={i} className={`${elementClass} ${elementClass}${i}`}></div>
     ));
   }
 
+  //Set states
   useEffect(() => {
-    setfoam(animateElements(foamCount, "foam"));
-    setbubbles(animateElements(bubbleCount, "bubble"));
+    setfoam(createBeerElements(foamCount, "foam"));
+    setbubbles(createBeerElements(bubbleCount, "bubble"));
   }, [bubbleCount, foamCount]);
-
-  const liquidRef = useRef();
-  const happynessRef = useRef();
-  const beerFoamref = useRef();
 
   //animations
   useEffect(() => {
     let maxHeihtOfLiquid = props.amountSold;
-
-    if (props.amountSold > 2400) {
-      maxHeihtOfLiquid = 2400;
+    if (props.amountSold > maxBeakerHeight * 10) {
+      maxHeihtOfLiquid = maxBeakerHeight * 10;
     }
-    let f = 0;
-    gsap.to("#liquid", { duration: 1, height: maxHeihtOfLiquid / 10 });
-    //beer foam bubbles animation
 
+    //beer liquid animation
+    gsap.to("#liquid", { duration: 1, height: (maxHeihtOfLiquid + 10) / 10 });
+
+    //beer foam bubbles animation
+    let f = 0;
     foam.map((element) =>
       gsap.fromTo(
         `.foam${f++}`,
@@ -57,7 +63,7 @@ export default function HappynessBar(props) {
       duration: 1.2,
       height: maxHeihtOfLiquid / 10,
     });
-  }, [foam, props.amountSold]);
+  }, [foam, maxBeakerHeight, props.amountSold]);
 
   const textAnimation = (amountOfBeer) =>
     props.amountSold > amountOfBeer && "happyTextAnimation";
@@ -69,16 +75,12 @@ export default function HappynessBar(props) {
         <div className="pour"></div>
         {/* <h2 className=" hapLevel">Happyness level</h2> */}
 
-        <div id="beaker">
-          <div className="beer-foam" ref={beerFoamref}>
-            {foam}
-          </div>
+        <div id="beaker" ref={beaker}>
+          <div className="beer-foam">{foam}</div>
 
-          <div id="liquid" ref={liquidRef}>
-            {bubbles}
-          </div>
+          <div id="liquid">{bubbles}</div>
 
-          <div className="happyness-level" ref={happynessRef}>
+          <div className="happyness-level">
             <div className={`${textAnimation(2200)} happyText`}>amazing</div>
             <div className={`${textAnimation(1800)} happyText`}>
               feeling lucky
