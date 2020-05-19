@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./popularbeer.scss";
+import CreateElements from "../../modules/CreateElements";
+import gsap from "gsap";
 
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
   const [topThreebeers, settopThreebeers] = useState([]);
+  const [confettis, setconfettis] = useState([]);
+
+  //confetti animation
+  useEffect(() => {
+    setconfettis(CreateElements(15, "confetti"));
+  }, []);
+
+  useEffect(() => {
+    confettis.forEach((item) => {
+      const classSelectname = item.props.className.split(" ")[1];
+
+      console.log(classSelectname);
+    });
+  }, [confettis]);
 
   useEffect(() => {
     setOrders((prevState) => {
@@ -75,7 +91,7 @@ const MostPopularBeer = (props) => {
     <div className="beer" key={beer.id}>
       <h3>{beer.name}</h3>
       <img
-        style={{ width: 100 }}
+        className="beerImg"
         src={require(`../../assets/images/beer_mockups/${beer.name
           .split(" ")
           .join("")
@@ -96,6 +112,8 @@ const MostPopularBeer = (props) => {
         <div className="firstPlace stage">1</div>
         <div className="thirdPlace stage">3</div>
       </div>
+
+      {confettis}
     </div>
   );
 };

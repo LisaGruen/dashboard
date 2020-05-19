@@ -51,6 +51,14 @@
 .beer:first-of-type {
   grid-area: 1/2;
   transform: translateY(-5px);
+  animation: firstPlaceBeer 0.3s linear alternate 1;
+  transform: scale(1);
+}
+
+@keyframes firstPlaceBeer {
+  100% {
+    transform: scale(1.5);
+  }
 }
 
 .peddeestal .beer:nth-of-type(3) {
@@ -59,4 +67,23 @@
 
 .peddeestal .beer:nth-of-type(2) {
   transform: translateY(45px);
+}
+
+.beerImg {
+  width: 100px;
+  // animation: changeBeer 1s linear forwards 1;
+  // opacity: 0;
+}
+
+@keyframes changeBeer {
+  100% {
+    opacity: 1;
+  }
+}
+
+.confetti {
+  width: 10px;
+  height: 20px;
+  transform: skew(10deg);
+  background-color: red;
 }

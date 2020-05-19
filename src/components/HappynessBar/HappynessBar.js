@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
+import CreateElements from "../../modules/CreateElements";
 
 import "./hapyness.scss";
 export default function HappynessBar(props) {
@@ -15,17 +16,10 @@ export default function HappynessBar(props) {
     setmaxBeakerHeight(beaker.current.clientHeight);
   }, [maxBeakerHeight]);
 
-  //Creates foam bubbles and beer bubbles
-  function createBeerElements(count, elementClass) {
-    return [...Array(count)].map((e, i) => (
-      <div key={i} className={`${elementClass} ${elementClass}${i}`}></div>
-    ));
-  }
-
   //Set states
   useEffect(() => {
-    setfoam(createBeerElements(foamCount, "foam"));
-    setbubbles(createBeerElements(bubbleCount, "bubble"));
+    setfoam(CreateElements(foamCount, "foam"));
+    setbubbles(CreateElements(bubbleCount, "bubble"));
   }, [bubbleCount, foamCount]);
 
   //animations
@@ -36,13 +30,12 @@ export default function HappynessBar(props) {
     }
 
     //beer liquid animation
-    gsap.to("#liquid", { duration: 1, height: (maxHeihtOfLiquid + 10) / 10 });
+    gsap.to("#liquid", { duration: 1, height: (maxHeihtOfLiquid + 40) / 10 });
 
     //beer foam bubbles animation
-    let f = 0;
     foam.map((element) =>
       gsap.fromTo(
-        `.foam${f++}`,
+        `.${element.props.className.split(" ")[1]}`,
         {
           y: 2,
           webkitFilter: "blur(1px)",
@@ -61,7 +54,7 @@ export default function HappynessBar(props) {
     //beer foam lifting up animation
     gsap.to(".beer-foam", {
       duration: 1.2,
-      height: maxHeihtOfLiquid / 10,
+      height: (maxHeihtOfLiquid - 30) / 10,
     });
   }, [foam, maxBeakerHeight, props.amountSold]);
 
