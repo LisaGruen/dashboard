@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./popularbeer.scss";
-import CreateElements from "../../modules/CreateElements";
-import gsap from "gsap";
+import Confetti from "./Confetti";
 
 const MostPopularBeer = (props) => {
   const [orders, setOrders] = useState([]);
   const [topThreebeers, settopThreebeers] = useState([]);
-  const [confettis, setconfettis] = useState([]);
-
-  //confetti animation
-  useEffect(() => {
-    setconfettis(CreateElements(15, "confetti"));
-  }, []);
-
-  useEffect(() => {
-    confettis.forEach((item) => {
-      const classSelectname = item.props.className.split(" ")[1];
-
-      console.log(classSelectname);
-    });
-  }, [confettis]);
 
   useEffect(() => {
     setOrders((prevState) => {
@@ -39,7 +24,7 @@ const MostPopularBeer = (props) => {
         return [...prevState, ...differenceBetweenPropsAndPrevState];
       }
     });
-  }, [props.currentQueue, props.prevQueue]);
+  }, [props.currentQueue]);
 
   useEffect(() => {
     //get the list of ordered beers
@@ -85,7 +70,7 @@ const MostPopularBeer = (props) => {
 
     //set top three
     settopThreebeers(beers.slice(0, 3));
-  }, [orders, props, props.beerTypes, props.tap, props.taps]);
+  }, [orders, props]);
 
   const topBeersDisplay = topThreebeers.map((beer) => (
     <div className="beer" key={beer.id}>
@@ -107,13 +92,16 @@ const MostPopularBeer = (props) => {
 
       <div className="peddeestal">
         {topBeersDisplay}
+        <div className="confettiContainer">
+          <Confetti
+            topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
+          />
+        </div>
 
         <div className="secondPlace stage">2</div>
         <div className="firstPlace stage">1</div>
         <div className="thirdPlace stage">3</div>
       </div>
-
-      {confettis}
     </div>
   );
 };

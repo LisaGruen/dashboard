@@ -48,11 +48,17 @@
   font-size: 5rem;
 }
 
+.confettiContainer,
 .beer:first-of-type {
   grid-area: 1/2;
+}
+.beer:first-of-type {
   transform: translateY(-5px);
   animation: firstPlaceBeer 0.3s linear alternate 1;
   transform: scale(1);
+}
+.confetti {
+  position: absolute;
 }
 
 @keyframes firstPlaceBeer {
@@ -82,8 +88,8 @@
 }
 
 .confetti {
-  width: 10px;
-  height: 20px;
+  width: 8px;
+  height: 15px;
   transform: skew(10deg);
-  background-color: red;
+  background-color: transparent;
 }

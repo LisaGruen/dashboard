@@ -7,8 +7,8 @@ export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState([]);
   const [foam, setfoam] = useState([]);
   const [maxBeakerHeight, setmaxBeakerHeight] = useState(0);
-  let bubbleCount = 5;
-  let foamCount = 6;
+  const bubbleCount = 5;
+  const foamCount = 6;
 
   //get the height
   const beaker = useRef();
@@ -20,7 +20,7 @@ export default function HappynessBar(props) {
   useEffect(() => {
     setfoam(CreateElements(foamCount, "foam"));
     setbubbles(CreateElements(bubbleCount, "bubble"));
-  }, [bubbleCount, foamCount]);
+  }, []);
 
   //animations
   useEffect(() => {
