@@ -15,9 +15,17 @@ export default React.memo(function Confetti(props) {
   useEffect(() => {
     confettis.forEach((item) => {
       const classSelectname = item.props.className.split(" ")[1];
-      gsap.to(`.${classSelectname}`, {
-        x: "random(-100, 100)",
-        y: "random(-100, 100)",
+      const tl = gsap.timeline({ repeat: 0 });
+      tl.to(`.${classSelectname}`, {
+        x: "random(-80, 80)",
+        y: 0,
+        backgroundColor: "transparent",
+        duration: "random(0.3, 2)",
+        ease: "slow",
+      });
+      tl.to(`.${classSelectname}`, {
+        x: "random(-80, 80)",
+        y: "random(200, 100)",
         backgroundColor: gsap.utils.random([
           "red",
           "blue",
@@ -25,9 +33,19 @@ export default React.memo(function Confetti(props) {
           "yellow",
           "orange",
         ]),
-        ease: "linear",
-        duration: "random(0.3, 3)",
-        repeat: 0,
+        duration: "random(0.3, 2)",
+        ease: "slow",
+        opacity: 1,
+      });
+      tl.to(`.${classSelectname}`, {
+        opacity: 0,
+        duration: "random(0.3, 2)",
+        ease: "slow",
+      });
+      tl.to(`.${classSelectname}`, {
+        opacity: 0,
+        duration: 0.1,
+        y: 0,
       });
     });
   }, [props.topThreebeers, confettis]);
