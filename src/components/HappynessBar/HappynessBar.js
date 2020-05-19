@@ -8,7 +8,6 @@ export default function HappynessBar(props) {
   const [bubbles, setbubbles] = useState([]);
   const [foam, setfoam] = useState([]);
   const [maxBeakerHeight, setmaxBeakerHeight] = useState(0);
-  const [isHappyMeterfull, setisHappyMeterfull] = useState(false);
   const bubbleCount = 5;
   const foamCount = 6;
 
@@ -27,9 +26,9 @@ export default function HappynessBar(props) {
   //animations
   useEffect(() => {
     let maxHeihtOfLiquid = props.amountSold;
+    //(more than 250)
     if (props.amountSold > maxBeakerHeight * 10) {
       maxHeihtOfLiquid = maxBeakerHeight * 10;
-      setisHappyMeterfull(true);
     }
 
     //beer liquid animation
@@ -66,7 +65,10 @@ export default function HappynessBar(props) {
   return (
     <div className="hapcontainer">
       <h2>HOW ARE WE TODAY?</h2>
-      <HappyAnimation isHappyMeterfull={isHappyMeterfull} />
+      <HappyAnimation
+        amountSold={props.amountSold}
+        maxBeakerHeight={maxBeakerHeight}
+      />
       <div id="container">
         <div className="pour"></div>
         {/* <h2 className=" hapLevel">Happyness level</h2> */}
