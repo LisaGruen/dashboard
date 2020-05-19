@@ -6,6 +6,7 @@ import animationData from "../../assets/lottifiles/chers.json";
 
 export default React.memo(function HappyAnimation(props) {
   const [displayValue, setdisplayValue] = useState("none");
+  const [StopShowing, setStopShowing] = useState(false);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -16,15 +17,19 @@ export default React.memo(function HappyAnimation(props) {
   };
 
   useEffect(() => {
-    if (props.amountSold > props.maxBeakerHeight * 10) {
-      setTimeout(() => {
-        setdisplayValue("flex");
-      }, 700);
+    if (StopShowing) {
+      return;
+    } else if (
+      props.amountSold > props.maxBeakerHeight * 10 &&
+      displayValue === "none"
+    ) {
+      setdisplayValue("flex");
       setTimeout(() => {
         setdisplayValue("none");
+        setStopShowing(true);
       }, 7000);
     }
-  }, [props.amountSold, props.maxBeakerHeight]);
+  }, [StopShowing, displayValue, props.amountSold, props.maxBeakerHeight]);
 
   return (
     <div style={{ display: displayValue }} className="beerMeterFull">
