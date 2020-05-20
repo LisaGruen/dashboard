@@ -1,5 +1,5 @@
 import React from "react";
-
+import BeerFoam from "./BeerFoam";
 export default function BeerCard(props) {
   const { name, levelOntap, beerType } = props.beer;
   return (
@@ -21,6 +21,7 @@ export default function BeerCard(props) {
             <h5>{beerType}</h5>
             <h6 className="price">45kr</h6>
           </div>
+          <BeerFoam beerName={name} />
         </div>
       </div>
     </div>
