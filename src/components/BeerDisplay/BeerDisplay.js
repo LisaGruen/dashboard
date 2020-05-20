@@ -8,16 +8,14 @@ export default function BeerDisplay(props) {
   const [beerTypes, setbeerTypes] = useState([]);
 
   useEffect(() => {
-    async function testingl() {
-      GetBeerTypes(setbeerTypes);
-    }
-    testingl();
+    GetBeerTypes(setbeerTypes);
   }, []);
 
   useEffect(() => {
     //gets unique names of beer
     const beerNames = [...new Set(props.taps.map((beerName) => beerName.beer))];
     let i = 0;
+
     const beers = beerNames.map((beerName) => {
       const beerType = beerTypes.find((type) => {
         return type.name === beerName;
@@ -34,12 +32,11 @@ export default function BeerDisplay(props) {
         id: i++,
         name: beerName,
         levelOntap: averageAmountOntapLeft,
-        beerType: beerType.category,
+        beerType: (beerType && beerType.category) || "IPA",
       };
     });
 
     setbeersList(beers);
-    return;
   }, [beerTypes, props.taps]);
 
   const beerCards = beersList.map((beer) => (
