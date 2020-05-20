@@ -1,21 +1,30 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default React.memo(function BeerFoam(props) {
   const svgRef = useRef();
+  const [loaded, setloaded] = useState(false);
 
   useEffect(() => {
     const heightSVG = svgRef.current.clientHeight;
-
-    const x = (parseInt(heightSVG) * parseInt(props.levelOntap)) / 2500;
-    console.log("props.levelOntap", props.levelOntap, "x", x);
-
-    gsap.fromTo(
-      `.theSquare${props.id}`,
-      { y: -50 },
-      { y: x + 10, duration: 3, repeat: 0 }
-    );
-  }, [props.id, props.levelOntap]);
+    const positionY = (heightSVG * props.levelOntap) / 2500;
+    if (!loaded) {
+      gsap.fromTo(
+        `.theSquare${props.id}`,
+        { y: 0, ease: "linear" },
+        { y: heightSVG - positionY, duration: 3, ease: "linear", repeat: 0 }
+      );
+      setloaded(true);
+    } else {
+      gsap.to(`.theSquare${props.id}`, {
+        y: heightSVG - positionY,
+        duration: 3,
+        ease: "linear",
+        repeat: 0,
+      });
+    }
+    return;
+  }, [loaded, props.id, props.levelOntap, props.name]);
 
   return (
     <svg
@@ -44,7 +53,7 @@ export default React.memo(function BeerFoam(props) {
           <rect
             className={`theSquare${props.id}`}
             x="0"
-            y="0"
+            y="15"
             width="500"
             height="500"
             fill="red"
