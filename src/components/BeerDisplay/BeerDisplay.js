@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./BeerDisplay.scss";
 import BeerCard from "./BeerCard";
-import GetData from "../../modules/GetData";
 import GetBeerTypes from "../../modules/GetBeerTypes";
 
 export default function BeerDisplay(props) {

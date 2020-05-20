@@ -40,19 +40,6 @@ function App() {
     setInitialData();
   }, []);
 
-  // useEffect(() => {
-  //   //gets unique names of beer
-  //   const beerNames = [...new Set(taps.map((beerName) => beerName.beer))];
-  //    // create object for each beer name
-  //    let i = 0;
-  //    const beers = beerNames.map((beerName) => ({
-  //      id: i++,
-  //      name: beerName,
-  //      count: 0,
-  //      levelOntap: 2500,
-  //    }));
-
-  // }, [taps]);
   //recuring data fetch
   useEffect(() => {
     const getDataIntervalID = setInterval(() => {
