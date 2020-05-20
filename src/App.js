@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
+import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
 
 import "./App.scss";
 
@@ -9,10 +10,12 @@ function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
   const [amountSold, setamountSold] = useState(0);
+  const [taps, setTaps] = useState([]);
+  const [currentBeersOnTap, setcurrentBeersOnTap] = useState([]);
+
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
   const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
-  const [taps, setTaps] = useState([]);
 
   const setBarData = async () => {
     const barInformation = await GetData();
@@ -54,6 +57,7 @@ function App() {
       />
 
       <HappynessBar amountSold={amountSold} />
+      <BeerDisplay taps={taps} />
     </div>
   );
 }
