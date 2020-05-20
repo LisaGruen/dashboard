@@ -40,5 +40,5 @@ export default function BeerDisplay(props) {
   const beerCards = beersList.map((beer) => (
     <BeerCard key={beer.id} beer={beer} />
   ));
-  return <div className="wrapper">{beerCards}</div>;
+  return <div className="wrapper wrapperBeersStatus">{beerCards}</div>;
 }

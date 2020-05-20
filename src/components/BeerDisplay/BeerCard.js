@@ -1,13 +1,13 @@
 import React from "react";
 
 export default function BeerCard(props) {
-  const { name, level, beerType } = props.beer;
+  const { name, levelOntap, beerType } = props.beer;
   return (
     <div className="beerItem">
-      <div className="beer">
-        <div className="glass">
+      <div className="beerStatus">
+        <div className="beerGlass">
           <img
-            className="beerImg"
+            className="beerImgStatus"
             src={require(`../../assets/images/beer_mockups/${name
               .split(" ")
               .join("")
@@ -16,10 +16,12 @@ export default function BeerCard(props) {
           />
         </div>
         <div className="beerBg">
-          <h3>{name}</h3>
-          <h4>{beerType}</h4>
+          <div className="text">
+            <h3>{name}</h3>
+            <h5>{beerType}</h5>
+            <h6 className="price">45kr</h6>
+          </div>
         </div>
-        ;
       </div>
     </div>
   );
