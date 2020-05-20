@@ -9,7 +9,10 @@ export default function BeerDisplay(props) {
   const [beerTypes, setbeerTypes] = useState([]);
 
   useEffect(() => {
-    GetBeerTypes(setbeerTypes);
+    async function testingl() {
+      GetBeerTypes(setbeerTypes);
+    }
+    testingl();
   }, []);
 
   useEffect(() => {
@@ -17,7 +20,9 @@ export default function BeerDisplay(props) {
     const beerNames = [...new Set(props.taps.map((beerName) => beerName.beer))];
     let i = 0;
     const beers = beerNames.map((beerName) => {
-      const beerType = beerTypes.find((type) => type.name === beerName);
+      const beerType = beerTypes.find((type) => {
+        return type.name === beerName;
+      });
 
       //get the level on tap for each beer average
       const levelOnTap = props.taps
@@ -35,6 +40,7 @@ export default function BeerDisplay(props) {
     });
 
     setbeersList(beers);
+    return;
   }, [beerTypes, props.taps]);
 
   const beerCards = beersList.map((beer) => (
