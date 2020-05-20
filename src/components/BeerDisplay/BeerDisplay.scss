@@ -61,3 +61,16 @@
     z-index: -1;
   }
 }
+
+// #theSquare {
+//   animation: tt 1s linear alternate infinite;
+// }
+
+@keyframes tt {
+  0% {
+    transform: translateY(-50vh);
+  }
+  100% {
+    transform: translateY(50vh);
+  }
+}
