@@ -1,0 +1,76 @@
+.beerItem {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.wrapper {
+  margin: var(--margin-large);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo);
+  border-radius: var(--border-radius);
+}
+
+.wrapperBeersStatus {
+  grid-template-columns: repeat(auto-fill, minmax(auto, 350px));
+  display: grid;
+}
+
+.beerBg {
+  // background-image: url(/more-beer-less-tears-dashboard/static/media/clooud.bf11f6d7.svg);
+  width: 300px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .text {
+    margin-top: 1em;
+    z-index: 1;
+    width: 70%;
+    h3 {
+      color: var(--color-2-normal);
+      margin-top: var(--margin);
+      text-align: left;
+      margin-bottom: 0.2em;
+    }
+    h5 {
+      color: var(--color-1-normal);
+      margin-bottom: 0.1em;
+    }
+    .price {
+      color: var(--color-3-normal);
+    }
+  }
+}
+
+.beerGlass {
+  display: flex;
+  justify-content: center;
+
+  .beerImgStatus {
+    height: 115px;
+    object-fit: contain;
+    position: absolute;
+    width: 100px;
+    transform: translateY(-55px);
+    z-index: -1;
+  }
+}
+
+// #theSquare {
+//   animation: tt 1s linear alternate infinite;
+// }
+
+@keyframes tt {
+  0% {
+    transform: translateY(-50vh);
+  }
+  100% {
+    transform: translateY(50vh);
+  }
+}

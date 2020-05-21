@@ -23,18 +23,23 @@ img {
 a {
   text-decoration: none;
   transition: all var(--transition);
+
   &:link {
     color: var(--link-color);
   }
+
   &:visited {
     color: var(--link-color-visited);
   }
+
   &:hover {
     color: var(--link-color-hover);
   }
+
   &:active {
     color: var(--link-color-active);
   }
+
   &:focus {
     color: var(--link-color-focus);
   }
