@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
-import Atwork from "./components/bartender.js";
+import Atwork from "./components/Bartender/Bartender";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
 
 import "./App.scss";
@@ -17,7 +17,7 @@ function App() {
 
   const setBarData = async () => {
     const barInformation = await GetData();
-    // setBartenders(information.bartenders);
+    setBartenders(barInformation.bartenders);
     setQueue(barInformation.queue);
     setTaps(barInformation.taps);
 
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <Atwork bartenderName={bartenders} servingCustomer={bartenders} />
+      <Atwork bartenders={bartenders} />
       <MostPopularBeer
         currentQueue={queue}
         taps={taps}
