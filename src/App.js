@@ -2,7 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
+
+import WaitingList from "./components/WaitingList/WaitingList";
+
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
+
 
 import "./App.scss";
 
@@ -22,10 +26,10 @@ function App() {
     // setBartenders(information.bartenders);
     setQueue(barInformation.queue);
     setTaps(barInformation.taps);
+    setServing(barInformation.serving);
 
     // const testrr = barInformation.taps;
     // setTaps();
-    // setServing(information.serving);
     // setTaps(information.taps);
     // setStorage(information.storage);
   };
@@ -56,8 +60,10 @@ function App() {
         setamountSold={setamountSold}
       />
 
+      <WaitingList currentQueue={queue} currentServing={serving} />
       <HappynessBar amountSold={amountSold} />
       <BeerDisplay taps={taps} />
+
     </div>
   );
 }
