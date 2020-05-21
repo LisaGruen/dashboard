@@ -1,4 +1,5 @@
 .App {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }

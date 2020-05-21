@@ -1,3 +1,7 @@
 // --------------------------------------------
 // This file contains main grid styles
 // --------------------------------------------
+body {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+}
