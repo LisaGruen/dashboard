@@ -2,7 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
+
 import WaitingList from "./components/WaitingList/WaitingList";
+
+import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
+
 
 import "./App.scss";
 
@@ -10,17 +14,12 @@ function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
   const [queue, setQueue] = useState([]);
   const [amountSold, setamountSold] = useState(0);
+  const [taps, setTaps] = useState([]);
+  const [currentBeersOnTap, setcurrentBeersOnTap] = useState([]);
+
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
-  const [storage, setStorage] = useState([
-    {
-      amount: 0,
-    },
-    {
-      amount: 3,
-    },
-  ]);
-  const [taps, setTaps] = useState([]);
+  const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
 
   const setBarData = async () => {
     const barInformation = await GetData();
@@ -60,8 +59,11 @@ function App() {
         taps={taps}
         setamountSold={setamountSold}
       />
-      <HappynessBar amountSold={amountSold} />{" "}
+
       <WaitingList currentQueue={queue} currentServing={serving} />
+      <HappynessBar amountSold={amountSold} />
+      <BeerDisplay taps={taps} />
+
     </div>
   );
 }

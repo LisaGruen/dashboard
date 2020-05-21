@@ -7,7 +7,7 @@
   width: 450px;
 
   div {
-    @include flexCenter(center, center);
+    @include flexCenter(center, flex-end);
     flex-direction: column;
   }
 }
@@ -17,6 +17,7 @@
   flex-direction: column;
   border-radius: var(--border-radius);
   background: var(--color-2-normal);
+  margin: var(--margin-large);
 
   padding: var(--padding);
 
@@ -48,15 +49,65 @@
   font-size: 5rem;
 }
 
+.confettiContainer,
 .beer:first-of-type {
   grid-area: 1/2;
+}
+.beer:first-of-type .beerImg {
   transform: translateY(-5px);
+  animation: firstPlaceBeer 1s ease-in-out 3 backwards;
+  transform: scale(1);
+  transform-origin: center;
+  opacity: 1;
 }
 
+@keyframes firstPlaceBeer {
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.1) rotate(-10deg);
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  60% {
+    transform: scale(1.1) rotate(20deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
 .peddeestal .beer:nth-of-type(3) {
   transform: translateY(65px);
 }
 
 .peddeestal .beer:nth-of-type(2) {
   transform: translateY(45px);
+}
+
+.beerImg {
+  width: 100px;
+  animation: changeBeer 1s linear forwards 1;
+  opacity: 0;
+}
+
+@keyframes changeBeer {
+  100% {
+    opacity: 1;
+  }
+}
+
+.confetti {
+  width: 5px;
+  height: 10px;
+  transform: skew(10deg);
+  position: absolute;
+  top: 130px;
 }

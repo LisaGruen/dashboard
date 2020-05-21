@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./popularbeer.scss";
+import Confetti from "./Confetti";
 
-const MostPopularBeer = (props) => {
+export default React.memo(function MostPopularBeer(props) {
   const [orders, setOrders] = useState([]);
   const [topThreebeers, settopThreebeers] = useState([]);
 
@@ -9,7 +10,6 @@ const MostPopularBeer = (props) => {
     setOrders((prevState) => {
       if (prevState.length === 0) {
         //set initial orders
-
         return props.currentQueue;
       } else {
         //get orders that prev state doesn't have
@@ -18,12 +18,11 @@ const MostPopularBeer = (props) => {
             return !prevState.some((item2) => item.id === item2.id);
           }
         );
-
         //set the state and only add the unique orders
         return [...prevState, ...differenceBetweenPropsAndPrevState];
       }
     });
-  }, [props.currentQueue, props.prevQueue]);
+  }, [props.currentQueue]);
 
   useEffect(() => {
     //get the list of ordered beers
@@ -32,30 +31,23 @@ const MostPopularBeer = (props) => {
 
     //gets unique names of beer
     const beerNames = [...new Set(props.taps.map((beerName) => beerName.beer))];
-
-    let i = 0;
     // create object for each beer name
-    const beers = beerNames.map((beerName) => ({
-      id: i++,
-      name: beerName,
-      count: 0,
-      levelOntap: 2500,
-    }));
-
-    beers.forEach((beer) => {
+    let i = 0;
+    const beers = beerNames.map((beerName) => {
       //get the amount beers repeating
-
       const sameBeerNameRepeat = orderedBeers.filter(
-        (beerNames) => beerNames === beer.name
+        (ordBeer) => beerNames === ordBeer.name
       );
-
       //get the level on tap for each beer smallest amount
       const levelOnTap = props.taps
-        .filter((beerTap) => beer.name === beerTap.beer)
+        .filter((tapBeer) => tapBeer.beer === beerName)
         .sort((a, b) => a.level - b.level);
-
-      beer.levelOntap = levelOnTap[0].level;
-      beer.count = sameBeerNameRepeat.length;
+      return {
+        id: i++,
+        name: beerName,
+        count: sameBeerNameRepeat.length,
+        levelOntap: levelOnTap[0].level,
+      };
     });
 
     //sort descending
@@ -69,13 +61,13 @@ const MostPopularBeer = (props) => {
 
     //set top three
     settopThreebeers(beers.slice(0, 3));
-  }, [orders, props, props.beerTypes, props.tap, props.taps]);
+  }, [orders, props]);
 
   const topBeersDisplay = topThreebeers.map((beer) => (
     <div className="beer" key={beer.id}>
       <h3>{beer.name}</h3>
       <img
-        style={{ width: 100 }}
+        className="beerImg"
         src={require(`../../assets/images/beer_mockups/${beer.name
           .split(" ")
           .join("")
@@ -91,6 +83,11 @@ const MostPopularBeer = (props) => {
 
       <div className="peddeestal">
         {topBeersDisplay}
+        <div className="confettiContainer">
+          <Confetti
+            topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
+          />
+        </div>
 
         <div className="secondPlace stage">2</div>
         <div className="firstPlace stage">1</div>
@@ -98,6 +95,4 @@ const MostPopularBeer = (props) => {
       </div>
     </div>
   );
-};
-
-export default MostPopularBeer;
+});
