@@ -1,32 +1,35 @@
-@import "../../sass/partials/abstracts/mixins";
+/*@import "../../sass/partials/abstracts/mixins";*/
+
 
 .WRAPPER {
     border-radius: var(--border-radius);
     background: var(--color-2-normal);
     padding: var(--padding);
     box-shadow: var(--box-shadow-neo);
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 1000px;
 }
 
 h2 {
+    padding: 0px;
     color: white;
     font-size: 2em;
     position: static;
     text-align: center;
 }
 
-.numbersContainer {
+.container {
+    margin-top: 30px;
     width: 300px;
     height: 600px;
     column-count: 3;
-    column-gap: 10px;
+    column-gap: 15px;
+    text-align: center;
 }
 
-.orderNumber {
-    width: 50px;
-    text-align: center;
-    margin-top: 10px;
+.serving,
+.queue {
+
     color: lightyellow;
     font-size: 2em;
     font-weight: bold;
@@ -34,6 +37,16 @@ h2 {
     animation-name: scale-in-center;
 
 }
+
+/*.queueNumbers {
+    animation-duration: 1s;
+    animation-name: scale-in-center;
+}*/
+
+img.cheersImg {
+    width: 300px;
+}
+
 
 .scale-in-center {
     -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
