@@ -1,25 +1,24 @@
-.bartendercontainer {
+#Wrapper {
   margin: var(--margin-large);
   padding: var(--padding);
   box-shadow: var(--box-shadow-neo);
   border-radius: var(--border-radius);
 }
-
-#container {
-  height: 370px;
-  margin: 0 auto;
-  position: relative;
-  top: -20px;
-  width: 248px;
+#bartenders {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 50px;
 }
 
-#container div {
-  position: absolute;
+#bartenders div {
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
 .portrait {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: 30px;
 }

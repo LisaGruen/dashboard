@@ -8,7 +8,6 @@ import WaitingList from "./components/WaitingList/WaitingList";
 
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
 
-
 import "./App.scss";
 
 function App() {
@@ -55,7 +54,6 @@ function App() {
 
   return (
     <div className="App">
-      <Atwork bartenders={bartenders} />
       <MostPopularBeer
         currentQueue={queue}
         taps={taps}
@@ -65,7 +63,7 @@ function App() {
       <WaitingList currentQueue={queue} currentServing={serving} />
       <HappynessBar amountSold={amountSold} />
       <BeerDisplay taps={taps} />
-
+      <Atwork bartenders={bartenders} />
     </div>
   );
 }
