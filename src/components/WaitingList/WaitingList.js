@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./waitinglist.scss";
 import { Animated } from "react-animated-css";
 
 let img = "";
 let randomImg = 0;
+//paths to the three images for the animation
 const ImgArray2 = [
-  require("../../assets/images/graphics/popMessage.png"),
+  require("../../assets/images/graphics/popMessage.gif"),
   require("../../assets/images/graphics/popMessage2.png"),
   require("../../assets/images/graphics/popMessage3.png"),
 ];
@@ -13,10 +14,11 @@ const ImgArray2 = [
 export default function WaitingList(props) {
   //console.log(props.currentQueue);
   if (props.currentQueue.length > 0) {
-    randomImg = Math.floor(Math.random() * 3);
+    //if there are no orders in the queue
+    randomImg = Math.floor(Math.random() * 3); //randomly shows one of the three images when there're no orders in the queue
     return (
       <div className="WRAPPER">
-        <h2 class="waiting">waiting list</h2>
+        <h2 className="waiting">waiting list</h2>
         <h2 className="">
           ALMOST THERE <br /> DO NOT GIVE UP!
         </h2>
@@ -45,10 +47,11 @@ export default function WaitingList(props) {
       </div>
     );
   } else {
-    img = ImgArray2[randomImg];
+    img = ImgArray2[randomImg]; //show one, randomly chosen image from ImgArray2
     console.log(randomImg);
     return (
       <div className="WRAPPER">
+        <h2 className=""></h2>
         <h2 className="popMessage"></h2>
         <div className="">
           <img className="cheersImg" src={img} />
