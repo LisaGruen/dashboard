@@ -1,4 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef
+} from "react";
 import gsap from "gsap";
 import CreateElements from "../../modules/CreateElements";
 import HappyAnimation from "./HappyAnimation";
@@ -32,17 +36,18 @@ export default function HappynessBar(props) {
     }
 
     //beer liquid animation
-    gsap.to("#liquid", { duration: 1, height: (maxHeihtOfLiquid + 40) / 10 });
+    gsap.to("#liquid", {
+      duration: 1,
+      height: (maxHeihtOfLiquid + 40) / 10
+    });
 
     //beer foam bubbles animation
     foam.map((element) =>
       gsap.fromTo(
-        `.${element.props.className.split(" ")[1]}`,
-        {
+        `.${element.props.className.split(" ")[1]}`, {
           y: 2,
           webkitFilter: "blur(1px)",
-        },
-        {
+        }, {
           y: -2,
           delay: "random(0.3, 3)",
           duration: "random(0.3, 2)",
@@ -62,34 +67,64 @@ export default function HappynessBar(props) {
 
   const textAnimation = (amountOfBeer) =>
     props.amountSold > amountOfBeer && "happyTextAnimation";
-  return (
-    <div className="hapcontainer">
-      <h2>HOW ARE WE TODAY?</h2>
-      <HappyAnimation
-        amountSold={props.amountSold}
-        maxBeakerHeight={maxBeakerHeight}
-      />
-      <div id="container">
-        <div className="pour"></div>
-        {/* <h2 className=" hapLevel">Happyness level</h2> */}
+  return ( <
+    div className = "hapcontainer" >
+    <
+    h2 > HOW ARE WE TODAY ? < /h2> <
+    HappyAnimation amountSold = {
+      props.amountSold
+    }
+    maxBeakerHeight = {
+      maxBeakerHeight
+    }
+    /> <
+    div id = "container" >
+    <
+    div className = "pour" > < /div> {
+      /* <h2 className=" hapLevel">Happyness level</h2> */ }
 
-        <div id="beaker" ref={beaker}>
-          <div className="beer-foam">{foam}</div>
+    <
+    div id = "beaker"
+    ref = {
+      beaker
+    } >
+    <
+    div className = "beer-foam" > {
+      foam
+    } < /div>
 
-          <div id="liquid">{bubbles}</div>
+    <
+    div id = "liquid" > {
+      bubbles
+    } < /div>
 
-          <div className="happyness-level">
-            <div className={`${textAnimation(2200)} happyText`}>amazing</div>
-            <div className={`${textAnimation(1800)} happyText`}>
-              feeling lucky
-            </div>
-            <div className={`${textAnimation(1300)} happyText`}>great</div>
-            <div className={`${textAnimation(800)} happyText`}>fine</div>
-            <div className={`${textAnimation(400)} happyText`}>ok</div>
-          </div>
-        </div>
-      </div>
-      <h3>FOO BAR HAS HAPPILLY SERVED: {props.amountSold}CL</h3>
-    </div>
+    <
+    div className = "happyness-level" >
+    <
+    div className = {
+      `${textAnimation(2200)} happyText`
+    } > amazing < /div> <
+    div className = {
+      `${textAnimation(1800)} happyText`
+    } >
+    feeling lucky <
+    /div> <
+    div className = {
+      `${textAnimation(1300)} happyText`
+    } > great < /div> <
+    div className = {
+      `${textAnimation(800)} happyText`
+    } > fine < /div> <
+    div className = {
+      `${textAnimation(400)} happyText`
+    } > ok < /div> <
+    /div> <
+    /div> <
+    /div> <
+    h3 > FOO BAR HAS HAPPILLY SERVED : {
+      props.amountSold
+    }
+    CL < /h3> <
+    /div>
   );
 }
