@@ -1,6 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef
+} from "react";
 import GetData from "./modules/GetData";
 import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
+import Atwork from "./components/Bartender/Bartender";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
 
 import WaitingList from "./components/WaitingList/WaitingList";
@@ -18,8 +23,7 @@ function App() {
 
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
-  const [storage, setStorage] = useState([
-    {
+  const [storage, setStorage] = useState([{
       amount: 0,
     },
     {
@@ -29,7 +33,7 @@ function App() {
 
   const setBarData = async () => {
     const barInformation = await GetData();
-    // setBartenders(information.bartenders);
+    setBartenders(barInformation.bartenders);
     setQueue(barInformation.queue);
     setTaps(barInformation.taps);
     setServing(barInformation.serving);
@@ -58,17 +62,41 @@ function App() {
     return () => clearInterval(getDataIntervalID);
   }, []);
 
-  return (
-    <div className="App">
-      <MostPopularBeer
-        currentQueue={queue}
-        taps={taps}
-        setamountSold={setamountSold}
-      />
-      <WaitingList currentQueue={queue} currentServing={serving} />{" "}
-      <HappynessBar amountSold={amountSold} /> <BeerDisplay taps={taps} />{" "}
-      <popMessage1 />
-    </div>
+  return ( <
+    div className = "App" >
+    <
+    MostPopularBeer currentQueue = {
+      queue
+    }
+    taps = {
+      taps
+    }
+    setamountSold = {
+      setamountSold
+    }
+    />
+
+    <
+    WaitingList currentQueue = {
+      queue
+    }
+    currentServing = {
+      serving
+    }
+    /> <
+    HappynessBar amountSold = {
+      amountSold
+    }
+    /> <
+    BeerDisplay taps = {
+      taps
+    }
+    /> <
+    Atwork bartenders = {
+      bartenders
+    }
+    /> <
+    /div>
   );
 }
 
