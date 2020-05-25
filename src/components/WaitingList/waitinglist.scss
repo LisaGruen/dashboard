@@ -1,5 +1,7 @@
-/*@import "../../sass/partials/abstracts/mixins";*/
-
+body {
+    display: flex;
+    align-items: flex-start;
+}
 
 .WRAPPER {
     border-radius: var(--border-radius);
@@ -14,37 +16,81 @@ h2 {
     padding: 0px;
     color: white;
     font-size: 2em;
-    position: static;
     text-align: center;
 }
 
+.waiting {
+    color: rgba($color: white, $alpha: 0.3);
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
 .container {
-    margin-top: 30px;
-    width: 300px;
-    height: 600px;
-    column-count: 3;
-    column-gap: 15px;
+    margin: 50px 0px 50px 0px;
+    width: 450px;
+    height: auto;
     text-align: center;
+
+}
+
+.border1 {
+    /*border: 1px solid rgba($color: white, $alpha: 0.3);*/
+    border-radius: 15px;
+    background-color: rgba($color: white, $alpha: 0.3);
+
+}
+
+.border2 {
+    /*border: 1px solid var(--color-5-normal);*/
+    background-color: var(--color-5-normal);
+    border-radius: 15px;
+}
+
+.myTable {
+    width: 100%;
+    height: auto;
 }
 
 .serving,
 .queue {
-
     color: lightyellow;
     font-size: 2em;
     font-weight: bold;
     animation-duration: 1s;
     animation-name: scale-in-center;
-
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+    padding: 8px 11px 11px 10px;
+    float: left;
+    position: relative;
 }
 
-/*.queueNumbers {
+.queue {
+    /*color: rgba($color: white, $alpha: 0.3);*/
+    /*color: #BFD8EF;*/
+    color: #504ECC;
+}
+
+.serving {
+    /*color: var(--color-5-normal);*/
+    color: #504ECC;
+}
+
+.queueNumbers {
     animation-duration: 1s;
     animation-name: scale-in-center;
-}*/
+}
 
-img.cheersImg {
+.imageContainer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.cheersImg {
     width: 300px;
+    align-self: flex-end;
 }
 
 

@@ -4,9 +4,8 @@ import MostPopularBeer from "./components/MostPopularBeer/MostPopularBeer";
 import HappynessBar from "./components/HappynessBar/HappynessBar";
 
 import WaitingList from "./components/WaitingList/WaitingList";
-
+import popMessage1 from "./components/WaitingList/popMessage1";
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
-
 
 import "./App.scss";
 
@@ -19,7 +18,14 @@ function App() {
 
   const [serving, setServing] = useState([]);
   const [bartenders, setBartenders] = useState([]);
-  const [storage, setStorage] = useState([{ amount: 0 }, { amount: 3 }]);
+  const [storage, setStorage] = useState([
+    {
+      amount: 0,
+    },
+    {
+      amount: 3,
+    },
+  ]);
 
   const setBarData = async () => {
     const barInformation = await GetData();
@@ -59,11 +65,9 @@ function App() {
         taps={taps}
         setamountSold={setamountSold}
       />
-
-      <WaitingList currentQueue={queue} currentServing={serving} />
-      <HappynessBar amountSold={amountSold} />
-      <BeerDisplay taps={taps} />
-
+      <WaitingList currentQueue={queue} currentServing={serving} />{" "}
+      <HappynessBar amountSold={amountSold} /> <BeerDisplay taps={taps} />{" "}
+      <popMessage1 />
     </div>
   );
 }
