@@ -1,128 +1,136 @@
 body {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .WRAPPER {
-    border-radius: var(--border-radius);
-    background: var(--color-2-normal);
-    padding: var(--padding);
-    box-shadow: var(--box-shadow-neo);
-    width: 500px;
-    height: 1000px;
+  border-radius: var(--border-radius);
+  background: var(--color-2-normal);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo);
+  width: 500px;
+  height: 1000px;
 }
 
 h2 {
-    padding: 0px;
-    color: white;
-    font-size: 2em;
-    text-align: center;
+  padding: 0px;
+  color: white;
+  font-size: 2em;
+  text-align: center;
 }
 
 .waiting {
-    color: rgba($color: white, $alpha: 0.3);
-    font-size: 1.5em;
-    margin-bottom: 30px;
+  color: rgba($color: white, $alpha: 0.3);
+  font-size: 1.5em;
+  margin-bottom: 30px;
 }
 
 .container {
-    margin: 50px 0px 50px 0px;
-    width: 450px;
-    height: auto;
-    text-align: center;
-
+  margin: 50px 0px 50px 0px;
+  width: 450px;
+  height: auto;
+  text-align: center;
 }
 
 .border1 {
-    /*border: 1px solid rgba($color: white, $alpha: 0.3);*/
-    border-radius: 15px;
-    background-color: rgba($color: white, $alpha: 0.3);
-
+  /*border: 1px solid rgba($color: white, $alpha: 0.3);*/
+  border-radius: 15px;
+  background-color: rgba($color: white, $alpha: 0.3);
 }
 
 .border2 {
-    /*border: 1px solid var(--color-5-normal);*/
-    background-color: var(--color-5-normal);
-    border-radius: 15px;
+  /*border: 1px solid var(--color-5-normal);*/
+  background-color: var(--color-5-normal);
+  border-radius: 15px;
 }
 
 .myTable {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .serving,
 .queue {
-    color: lightyellow;
-    font-size: 2em;
-    font-weight: bold;
-    animation-duration: 1s;
-    animation-name: scale-in-center;
-    width: 90px;
-    height: 50px;
-    text-align: center;
-    margin: 5px;
-    padding: 8px 11px 11px 10px;
-    float: left;
-    position: relative;
+  color: lightyellow;
+  font-size: 2em;
+  font-weight: bold;
+  animation-duration: 1s;
+  animation-name: scale-in-center;
+  width: 90px;
+  height: 50px;
+  text-align: center;
+  margin: 5px;
+  padding: 8px 11px 11px 10px;
+  float: left;
+  position: relative;
 }
 
 .queue {
-    /*color: rgba($color: white, $alpha: 0.3);*/
-    /*color: #BFD8EF;*/
-    color: #504ECC;
+  /*color: rgba($color: white, $alpha: 0.3);*/
+  /*color: #BFD8EF;*/
+  color: #504ecc;
 }
 
 .serving {
-    /*color: var(--color-5-normal);*/
-    color: #504ECC;
+  /*color: var(--color-5-normal);*/
+  color: #504ecc;
 }
 
-.queueNumbers {
-    animation-duration: 1s;
-    animation-name: scale-in-center;
+.queueNumbers,
+.popMessage {
+  animation-duration: 1s;
+  animation-name: scale-in-center;
 }
 
 .imageContainer {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 .cheersImg {
-    width: 300px;
-    align-self: flex-end;
+  width: 300px;
+  align-self: flex-end;
 }
 
-
 .scale-in-center {
-    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes scale-in-center {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        opacity: 1;
-    }
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
 
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 1;
-    }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes scale-in-center {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        opacity: 1;
-    }
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
 
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 1;
-    }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes color {
+  from {
+    color: #504ecc;
+  }
+  to {
+    color: red;
+  }
 }
