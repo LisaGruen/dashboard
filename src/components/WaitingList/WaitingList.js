@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./waitinglist.scss";
-import { Animated } from "react-animated-css";
 
 let img = "";
 let randomImg = 0;
