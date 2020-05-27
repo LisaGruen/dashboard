@@ -7,8 +7,8 @@ let randomImg = 0;
 //paths to the three images for the animation
 const ImgArray2 = [
   require("../../assets/images/graphics/popMessage.gif"),
-  require("../../assets/images/graphics/popMessage2.png"),
-  require("../../assets/images/graphics/popMessage3.png"),
+  require("../../assets/images/graphics/popMessage2.gif"),
+  require("../../assets/images/graphics/popMessage3.gif"),
 ];
 
 export default function WaitingList(props) {
@@ -54,7 +54,7 @@ export default function WaitingList(props) {
         <h2 className=""></h2>
         <h2 className="popMessage"></h2>
         <div className="">
-          <img className="cheersImg" src={img} />
+          <img className="cheersImg popMessage " src={img} />
         </div>
         <h2>BEER IS READY!</h2>{" "}
         <div className="container border2">
