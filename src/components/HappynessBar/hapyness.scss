@@ -1,8 +1,10 @@
 .hapcontainer {
-  margin: var(--margin-large);
+  margin: var(--margin);
   padding: var(--padding);
   box-shadow: var(--box-shadow-neo);
   border-radius: var(--border-radius);
+  width: auto;
+  height: 100%;
 }
 
 .beerMeterFull {
@@ -64,7 +66,7 @@
 #container .happyness-level > div {
   margin: 1.2rem 0;
   position: relative;
-  color: var(--color-6-lighter);
+  color: #edaf32;
 }
 
 #beaker {
@@ -79,8 +81,8 @@
 }
 
 #liquid {
-  background-color: #edaf32;
-  border: 10px solid #edaf32;
+  background-color: var(--color-6-normal);
+  border: 10px solid var(--color-6-normal);
   border-radius: 0 0 20px 20px;
   bottom: 0;
   overflow: hidden;

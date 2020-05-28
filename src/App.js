@@ -7,6 +7,7 @@ import HappynessBar from "./components/HappynessBar/HappynessBar";
 import WaitingList from "./components/WaitingList/WaitingList";
 import popMessage1 from "./components/WaitingList/popMessage1";
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
+import Logo from "./components/Logo/Logo";
 
 import "./App.scss";
 
@@ -61,14 +62,28 @@ function App() {
 
   return (
     <div className="App">
-      <MostPopularBeer
-        currentQueue={queue}
-        taps={taps}
-        setamountSold={setamountSold}
-      />
-      <WaitingList currentQueue={queue} currentServing={serving} />{" "}
-      <HappynessBar amountSold={amountSold} /> <BeerDisplay taps={taps} />{" "}
-      <Atwork bartenders={bartenders} />{" "}
+      <div className="item a">
+        <Logo />
+      </div>
+      <div className="item b">
+        <MostPopularBeer
+          currentQueue={queue}
+          taps={taps}
+          setamountSold={setamountSold}
+        />
+      </div>
+      <div className="item c">
+        <HappynessBar amountSold={amountSold} />
+      </div>
+      <div className="item d">
+        <WaitingList currentQueue={queue} currentServing={serving} />
+      </div>
+      <div className="item e">
+        <BeerDisplay taps={taps} />
+      </div>
+      <div className="item f">
+        <Atwork bartenders={bartenders} />
+      </div>
     </div>
   );
 }

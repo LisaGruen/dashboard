@@ -8,7 +8,7 @@
 
 // text styles
 body {
-  @include flexCenter(center, column);
+  // @include flexCenter(center, column);
   font-family: var(--primary-font);
 }
 
@@ -25,8 +25,9 @@ h1 {
 
 h2 {
   font-family: var(--primary-font);
-  padding-bottom: var(--padding);
-  color: var(--color-1-darker);
+  font-size: var(--base-font-size);
+  //padding-bottom: var(--padding);
+  color: var(--color-7-normal);
   text-align: center;
 }
 
@@ -35,4 +36,6 @@ h3 {
   margin-bottom: var(--small-gap);
   color: var(--color-6-normal);
   text-align: center;
+  letter-spacing: var(--letter-spacing);
+  font-weight: 200;
 }

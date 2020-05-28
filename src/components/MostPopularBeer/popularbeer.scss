@@ -1,10 +1,10 @@
 @import "../../sass/partials/abstracts/mixins";
 
 .peddeestal {
+  margin: var(--margin-large);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
-  width: 450px;
+  //width: 450px;
 
   div {
     @include flexCenter(center, flex-end);
@@ -13,22 +13,21 @@
 }
 
 .WRAPPER {
+  position: relative;
   @include flexCenter(center, center);
   flex-direction: column;
   border-radius: var(--border-radius);
   background: var(--color-2-normal);
-  margin: var(--margin-large);
-
+  margin: var(--margin);
   padding: var(--padding);
-
   box-shadow: var(--box-shadow-neo);
 }
 
 .stage {
-  width: 100%;
   background-color: var(--color-6-normal);
   align-self: flex-end;
   color: var(--text-h2-color);
+  border-radius: 3px;
   @include flexCenter(center, center);
 }
 
@@ -51,6 +50,8 @@
 
 .confettiContainer,
 .beer:first-of-type {
+  margin-left: -10px;
+  margin-right: -10px;
   grid-area: 1/2;
 }
 .beer:first-of-type .beerImg {
@@ -108,6 +109,6 @@
   width: 5px;
   height: 10px;
   transform: skew(10deg);
-  position: absolute;
-  top: 130px;
+  position: relative;
+  //top: 130px;
 }

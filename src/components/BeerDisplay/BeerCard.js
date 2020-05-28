@@ -18,8 +18,10 @@ export default function BeerCard(props) {
         <div className="beerBg">
           <div className="text">
             <h3>{name}</h3>
-            <h5>{beerType}</h5>
-            <h6 className="price">45kr</h6>
+            <div className="typePrice">
+              <h4>{beerType}</h4>
+              <h4 className="price">50kr</h4>
+            </div>
           </div>
           <BeerFoam levelOntap={levelOntap} id={id} />
         </div>

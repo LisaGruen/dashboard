@@ -36,7 +36,7 @@ function Atwork(props) {
 }
 
 function Bartender(props) {
-  return <h2>{props.bartenderName}</h2>;
+  return <h3>{props.bartenderName}</h3>;
 }
 
 function Face(props) {

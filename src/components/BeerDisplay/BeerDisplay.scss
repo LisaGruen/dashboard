@@ -7,7 +7,10 @@
 }
 
 .wrapper {
-  margin: var(--margin-large);
+  width: auto;
+  height: 100%;
+  position: relative;
+  margin: var(--margin);
   padding: var(--padding);
   box-shadow: var(--box-shadow-neo);
   border-radius: var(--border-radius);
@@ -29,7 +32,7 @@
   align-items: center;
 
   .text {
-    margin-top: 1em;
+    margin-top: 1.5em;
     z-index: 1;
     width: 70%;
     h3 {
@@ -38,12 +41,13 @@
       text-align: left;
       margin-bottom: 0.2em;
     }
-    h5 {
+    h4 {
       color: var(--color-1-normal);
       margin-bottom: 0.1em;
     }
     .price {
-      color: var(--color-3-normal);
+      color: var(--color-1-normal);
+      margin-top: -5px;
     }
   }
 }

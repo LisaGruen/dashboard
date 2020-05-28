@@ -15,19 +15,21 @@ export default function WaitingList(props) {
     randomImg = Math.floor(Math.random() * 3);
     return (
       <div className="WRAPPER">
-        <h2 class="waiting">waiting list</h2>
-        <h2 className="">
+        <h2>
           ALMOST THERE <br /> DO NOT GIVE UP!
         </h2>
+
         <div className="container border1">
+          <h2 class="waiting">Number</h2>
           {props.currentQueue.map(({ id, startTime }) => (
             <div className="queue" style={{ color: "" }} key={id}>
               {id}
             </div>
           ))}
         </div>
-        <h2>BEER IS READY!</h2>{" "}
+        <h2>BEER IS READY!</h2>
         <div className="container border2">
+          <h2 class="waiting">Number</h2>
           {props.currentServing.map(({ id }) => (
             <div className="serving " style={{ color: "" }} key={id}>
               {id}

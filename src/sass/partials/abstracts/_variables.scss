@@ -4,15 +4,15 @@
 
 :root {
   // typography settings
-  --base-font-size: 16px;
+  --base-font-size: 1.5vw;
   --primary-font: "Karla", sans-serif;
   --secondary-font: "Arial", sans-serif;
   --line-height: 1.5;
-  --letter-spacing: 0.5rem;
+  --letter-spacing: 0.2rem;
 
   // spacing
   --small-gap: 1em;
-  --gap: 1.5em;
+  --gap: 1em;
   --margin: 1rem;
   --margin-large: 2rem;
   --padding: 2em;
@@ -63,11 +63,14 @@
   --color-6-normal: hsla(var(--base-color-4) 100% 89% / 100%);
   --color-6-lighter: hsla(var(--base-color-4) 100% 95% / 100%);
 
+  // White
+  --color-7-normal: white;
+
   // box shadow
-  --box-shadow-neo: 23px 23px 46px var(--shadow-2-normal),
-    -23px -23px 46px var(--shadow-2-normal);
+  --box-shadow-neo: 19px 19px 35px var(--shadow-2-normal),
+    -19px -19px 35px var(--shadow-2-normal);
   --box-shadow: 15px 15px 0px 0px;
 
   //border-radius
-  --border-radius: 30px;
+  --border-radius: 10px;
 }

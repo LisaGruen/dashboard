@@ -3,8 +3,8 @@
 // --------------------------------------
 
 @mixin flexCenter($aligned, $direction) {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: $aligned;
-  flex-direction: $direction;
+  // flex-direction: $direction;
 }

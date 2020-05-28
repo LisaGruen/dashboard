@@ -2,6 +2,53 @@
 // This file contains main grid styles
 // --------------------------------------------
 body {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(300px, 1fr));
+  margin: 30px;
+}
+
+.App {
+  display: grid;
+  width: 96vw;
+  height: 95vh;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 30% 30% 40%;
+  row-gap: 15px;
+  //border-style: dashed;
+  //border-color: red;
+}
+
+.item {
+  //border-style: dashed;
+  //border-color: white;
+  border-radius: 3px;
+}
+
+.a {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.b {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.c {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+.d {
+  grid-column: 4;
+  grid-row: 1 / 4;
+}
+
+.e {
+  grid-column: 5;
+  grid-row: 1 / 4;
+}
+
+.f {
+  grid-column: 1 / 4;
+  grid-row: 3 / 3;
 }
