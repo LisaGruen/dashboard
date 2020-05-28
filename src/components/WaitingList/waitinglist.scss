@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .WRAPPER {
   border-radius: var(--border-radius);
   background: var(--color-2-normal);
@@ -16,6 +17,38 @@
 .container {
   margin: 0px 0px 20px 0px;
   width: 100%;
+=======
+body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.WRAPPER {
+  border-radius: var(--border-radius);
+  background: var(--color-2-normal);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo);
+  width: 500px;
+  height: 1000px;
+}
+
+h2 {
+  padding: 0px;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+.waiting {
+  color: rgba($color: white, $alpha: 0.3);
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.container {
+  margin: 50px 0px 50px 0px;
+  width: 450px;
+>>>>>>> master
   height: auto;
   text-align: center;
 }
@@ -64,12 +97,18 @@
   color: #504ecc;
 }
 
+<<<<<<< HEAD
 .queueNumbers {
+=======
+.queueNumbers,
+.popMessage {
+>>>>>>> master
   animation-duration: 1s;
   animation-name: scale-in-center;
 }
 
 .imageContainer {
+<<<<<<< HEAD
   height: 100%;
   width: auto;
 }
@@ -77,6 +116,15 @@
 .cheersImg {
   width: 100%;
   //align-self: flex-end;
+=======
+  display: flex;
+  align-items: flex-end;
+}
+
+.cheersImg {
+  width: 300px;
+  align-self: flex-end;
+>>>>>>> master
 }
 
 .scale-in-center {
@@ -112,3 +160,15 @@
     opacity: 1;
   }
 }
+<<<<<<< HEAD
+=======
+
+@keyframes color {
+  from {
+    color: #504ecc;
+  }
+  to {
+    color: red;
+  }
+}
+>>>>>>> master
