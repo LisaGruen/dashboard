@@ -87,10 +87,10 @@ function App() {
         </div>
       </div>
       <div className="containerRight">
-        <div className="item">
+        <div className="item waitingListItem">
           <WaitingList currentQueue={queue} currentServing={serving} />
         </div>
-        <div className="item">
+        <div className="item beerLeftItem">
           <BeerDisplay taps={taps} />
         </div>
       </div>

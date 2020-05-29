@@ -22,3 +22,8 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.waitingListItem,
+.beerLeftItem {
+  display: flex;
+}

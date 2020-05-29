@@ -62,13 +62,7 @@ function Face(props) {
 
   return (
     <div className="portrait">
-      <img
-        style={{ width: 150 }}
-        width="150"
-        height="150"
-        src={statusFace}
-        alt="portrait bartender"
-      />
+      <img width="100" height="100" src={statusFace} alt="portrait bartender" />
     </div>
   );
 }
