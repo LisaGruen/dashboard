@@ -11,6 +11,10 @@
   height: auto;
   position: relative;
   justify-content: space-around;
+  h2 {
+    position: absolute;
+    top: 32px;
+  }
 }
 
 .wrapperPeddestal {
@@ -23,7 +27,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   div {
-    @include flexCenter(center, flex-end);
+    @include flexCenter(flex-end, flex-end);
     flex-direction: column;
   }
 }
@@ -63,11 +67,22 @@
   grid-area: 1/2;
 }
 .beer:first-of-type .beerImg {
-  transform: translateY(-5px);
   animation: firstPlaceBeer 1s ease-in-out 3 backwards;
   transform: scale(1);
   transform-origin: center;
   opacity: 1;
+}
+
+.beer {
+  transform: translateY(-5px);
+
+  h3 {
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transform: translateY(25px);
+  }
 }
 
 @keyframes firstPlaceBeer {
@@ -94,11 +109,11 @@
   }
 }
 .peddeestal .beer:nth-of-type(3) {
-  transform: translateY(65px);
+  transform: translateY(45px);
 }
 
 .peddeestal .beer:nth-of-type(2) {
-  transform: translateY(45px);
+  transform: translateY(25px);
 }
 
 .beerImg {
