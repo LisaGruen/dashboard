@@ -44,7 +44,7 @@ export default function BeerDisplay(props) {
     <BeerCard key={beer.id} beer={beer} />
   ));
   return (
-    <div className="wrapper">
+    <div className="wrapper beerDisplayWrapper">
       <h2>BEER LEFT ON THE TAP</h2>
       <div className="wrapperBeersStatus">{beerCards}</div>
     </div>

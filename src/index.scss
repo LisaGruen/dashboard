@@ -16,3 +16,9 @@
 // components
 //@import "sass/partials/components/buttons";
 //@import "sass/partials/components/form";
+
+.logoandAnnoucmentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -65,11 +65,11 @@ function App() {
     <div className="App">
       <div className="containerAll">
         <div className="wrapperAll">
-          <div className="item">
+          <div className="item logoandAnnoucmentWrapper">
             <Logo />
             <Announcement />
           </div>
-          <div className="item">
+          <div className="item mosPopularBeerItem">
             <MostPopularBeer
               currentQueue={queue}
               taps={taps}
