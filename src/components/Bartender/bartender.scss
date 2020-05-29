@@ -1,16 +1,10 @@
-#Wrapper {
-  width: auto;
-  height: 100%;
-  margin: var(--margin);
-  padding: var(--padding);
-  box-shadow: var(--box-shadow-neo);
-  border-radius: var(--border-radius);
-}
 #bartenders {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .portrait {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
-  margin-left: 140px;
 }

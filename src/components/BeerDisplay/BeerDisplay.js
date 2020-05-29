@@ -6,6 +6,7 @@ import GetBeerTypes from "../../modules/GetBeerTypes";
 export default function BeerDisplay(props) {
   const [beersList, setbeersList] = useState([]);
   const [beerTypes, setbeerTypes] = useState([]);
+  const maxBeers = 4;
 
   useEffect(() => {
     GetBeerTypes(setbeerTypes);
@@ -36,7 +37,7 @@ export default function BeerDisplay(props) {
       };
     });
 
-    setbeersList(beers);
+    setbeersList(beers.slice(0, maxBeers));
   }, [beerTypes, props.taps]);
 
   const beerCards = beersList.map((beer) => (

@@ -20,22 +20,26 @@ p {
 
 h1 {
   font-family: var(--primary-font);
+  font-size: var(--base-font-size);
   color: var(--text-h1-color);
+  letter-spacing: var(--letter-spacing);
 }
 
 h2 {
   font-family: var(--primary-font);
   font-size: var(--base-font-size);
   //padding-bottom: var(--padding);
+  letter-spacing: var(--letter-spacing);
   color: var(--color-7-normal);
   text-align: center;
 }
 
 h3 {
   font-family: var(--primary-font);
+  font-size: var(--base-font-size-small);
   margin-bottom: var(--small-gap);
-  color: var(--color-6-normal);
+  color: var(--color-3-normal);
   text-align: center;
   letter-spacing: var(--letter-spacing);
-  font-weight: 200;
+  font-weight: 700;
 }

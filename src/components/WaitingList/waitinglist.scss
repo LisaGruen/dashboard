@@ -1,56 +1,10 @@
-<<<<<<< HEAD
-.WRAPPER {
-  border-radius: var(--border-radius);
-  background: var(--color-2-normal);
-  //padding: var(--padding);
-  box-shadow: var(--box-shadow-neo);
-  width: auto;
-  height: 100%;
-}
-
-.waiting {
-  color: var(--color-2-normal);
-  font-size: 1.5em;
-  margin-top: 10px;
-}
-
-.container {
-  margin: 0px 0px 20px 0px;
-  width: 100%;
-=======
-body {
-  display: flex;
-  align-items: flex-start;
-}
-
-.WRAPPER {
-  border-radius: var(--border-radius);
-  background: var(--color-2-normal);
-  padding: var(--padding);
-  box-shadow: var(--box-shadow-neo);
-  width: 500px;
-  height: 1000px;
-}
-
-h2 {
-  padding: 0px;
-  color: white;
-  font-size: 2em;
-  text-align: center;
-}
-
-.waiting {
-  color: rgba($color: white, $alpha: 0.3);
-  font-size: 1.5em;
-  margin-bottom: 30px;
-}
-
-.container {
+.container2 {
   margin: 50px 0px 50px 0px;
-  width: 450px;
->>>>>>> master
+  width: 100%;
   height: auto;
   text-align: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .border1 {
@@ -72,13 +26,12 @@ h2 {
 
 .serving,
 .queue {
-  color: lightyellow;
   font-size: 2em;
   font-weight: bold;
-  animation-duration: 1s;
-  animation-name: scale-in-center;
-  width: 90px;
-  height: 50px;
+  /*animation-duration: 1s;
+  animation-name: scale-in-center;*/
+  width: 200px;
+  height: auto;
   text-align: center;
   margin: 5px;
   padding: 8px 11px 11px 10px;
@@ -87,50 +40,33 @@ h2 {
 }
 
 .queue {
-  /*color: rgba($color: white, $alpha: 0.3);*/
-  /*color: #BFD8EF;*/
-  color: #504ecc;
+  color: var(--color-6-normal);
 }
 
 .serving {
-  /*color: var(--color-5-normal);*/
-  color: #504ecc;
+  color: var(--color-4-normal);
 }
 
-<<<<<<< HEAD
-.queueNumbers {
-=======
 .queueNumbers,
 .popMessage {
->>>>>>> master
-  animation-duration: 1s;
-  animation-name: scale-in-center;
+  /*animation-duration: 1s;
+  animation-name: scale-in-center;*/
 }
 
 .imageContainer {
-<<<<<<< HEAD
-  height: 100%;
-  width: auto;
-}
-
-.cheersImg {
-  width: 100%;
-  //align-self: flex-end;
-=======
   display: flex;
   align-items: flex-end;
 }
 
 .cheersImg {
-  width: 300px;
-  align-self: flex-end;
->>>>>>> master
+  width: 200px;
+  //align-self: flex-end;
 }
 
 .scale-in-center {
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  /*-webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
-  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;*/
 }
 
 @-webkit-keyframes scale-in-center {
@@ -160,8 +96,6 @@ h2 {
     opacity: 1;
   }
 }
-<<<<<<< HEAD
-=======
 
 @keyframes color {
   from {
@@ -171,4 +105,3 @@ h2 {
     color: red;
   }
 }
->>>>>>> master

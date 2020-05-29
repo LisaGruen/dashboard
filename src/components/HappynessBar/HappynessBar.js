@@ -66,34 +66,39 @@ export default function HappynessBar(props) {
   const textAnimation = (amountOfBeer) =>
     props.amountSold > amountOfBeer && "happyTextAnimation";
   return (
-    <div className="hapcontainer">
+    <div className="wrapper">
       <h2> HOW ARE WE TODAY ? </h2>{" "}
-      <HappyAnimation
-        amountSold={props.amountSold}
-        maxBeakerHeight={maxBeakerHeight}
-      />{" "}
-      <div id="container">
-        <div className="pour"> </div>{" "}
-        {/* <h2 className=" hapLevel">Happyness level</h2> */}
-        <div id="beaker" ref={beaker}>
-          <div className="beer-foam"> {foam} </div>
-          <div id="liquid"> {bubbles} </div>
-          <div className="happyness-level">
-            <div className={`${textAnimation(2200)} happyText`}> amazing </div>{" "}
-            <div className={`${textAnimation(1800)} happyText`}>
-              feeling lucky{" "}
+      <div className="wrapperInside">
+        <HappyAnimation
+          amountSold={props.amountSold}
+          maxBeakerHeight={maxBeakerHeight}
+        />{" "}
+        <div id="container">
+          <div className="pour"> </div>{" "}
+          {/* <h2 className=" hapLevel">Happyness level</h2> */}
+          <div id="beaker" ref={beaker}>
+            <div className="beer-foam"> {foam} </div>
+            <div id="liquid"> {bubbles} </div>
+            <div className="happyness-level">
+              <div className={`${textAnimation(2200)} happyText`}>
+                {" "}
+                amazing{" "}
+              </div>{" "}
+              <div className={`${textAnimation(1800)} happyText`}>
+                feeling lucky{" "}
+              </div>{" "}
+              <div className={`${textAnimation(1300)} happyText`}> great </div>{" "}
+              <div className={`${textAnimation(800)} happyText`}> fine </div>{" "}
+              <div className={`${textAnimation(400)} happyText`}> ok </div>{" "}
             </div>{" "}
-            <div className={`${textAnimation(1300)} happyText`}> great </div>{" "}
-            <div className={`${textAnimation(800)} happyText`}> fine </div>{" "}
-            <div className={`${textAnimation(400)} happyText`}> ok </div>{" "}
           </div>{" "}
-        </div>{" "}
-      </div>{" "}
-      <h3>
-        {" "}
-        FOO BAR HAS HAPPILLY SERVED : {props.amountSold}
-        CL{" "}
-      </h3>{" "}
+        </div>
+        <h3>
+          {" "}
+          FOOBAR has happily served : {props.amountSold}
+          cl{" "}
+        </h3>
+      </div>
     </div>
   );
 }

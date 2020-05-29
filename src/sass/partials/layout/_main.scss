@@ -1,3 +1,26 @@
 // --------------------------------------------
 // This file contains main section styles
 // --------------------------------------------
+.wrapper {
+  margin: var(--margin);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo);
+  border-radius: var(--border-radius);
+  width: 95%;
+}
+
+.wrapperInside {
+  margin-top: var(--margin);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo2);
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.Logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--margin);
+  margin-bottom: var(--margin-large);
+}

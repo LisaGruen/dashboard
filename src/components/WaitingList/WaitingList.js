@@ -16,39 +16,38 @@ export default function WaitingList(props) {
     //if there are no orders in the queue
     randomImg = Math.floor(Math.random() * 3); //randomly shows one of the three images when there're no orders in the queue
     return (
-      <div className="WRAPPER">
-<<<<<<< HEAD
+      <div className="wrapper">
         <h2>
-=======
-        <h2 className="waiting">waiting list</h2>
-        <h2 className="">
->>>>>>> master
           ALMOST THERE <br /> DO NOT GIVE UP!
         </h2>
-
-        <div className="container border1">
-          <h2 class="waiting">Number</h2>
-          {props.currentQueue.map(({ id, startTime }) => (
-            <div className="queue" style={{ color: "" }} key={id}>
-              {id}
-            </div>
-          ))}
+        <div className="">
+          <h3>waiting list</h3>
+          <div className="container2 border1">
+            {props.currentQueue.map(({ id, startTime }) => (
+              <div className="queue" style={{ color: "" }} key={id}>
+                {id}
+              </div>
+            ))}
+          </div>
         </div>
-        <h2>BEER IS READY!</h2>
-        <div className="container border2">
-          <h2 class="waiting">Number</h2>
-          {props.currentServing.map(({ id }) => (
-            <div className="serving " style={{ color: "" }} key={id}>
-              {id}
-            </div>
-          ))}
+        <h2>BEER IS READY!</h2>{" "}
+        <div className="">
+          <div className="container2 border2">
+            {props.currentServing.map(({ id }) => (
+              <div className="serving " style={{ color: "" }} key={id}>
+                {id}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="imageContainer">
-          <img
-            className="cheersImg"
-            src={require("../../assets/images/graphics/orderReady.svg")}
-            alt="Cheers!"
-          />
+        <div className="wrapperInside">
+          <div className="imageContainer">
+            <img
+              className="cheersImg"
+              src={require("../../assets/images/graphics/orderReady.svg")}
+              alt="Cheers!"
+            />
+          </div>
         </div>
       </div>
     );
@@ -56,14 +55,14 @@ export default function WaitingList(props) {
     img = ImgArray2[randomImg]; //show one, randomly chosen image from ImgArray2
     console.log(randomImg);
     return (
-      <div className="WRAPPER">
-        <h2 className=""></h2>
+      <div className="wrapper">
+        <h2></h2>
         <h2 className="popMessage"></h2>
         <div className="">
           <img className="cheersImg popMessage " src={img} />
         </div>
         <h2>BEER IS READY!</h2>{" "}
-        <div className="container border2">
+        <div className="container2 border2">
           {props.currentServing.map(({ id }) => (
             <div className="serving " style={{ color: "" }} key={id}>
               {id}

@@ -1,9 +1,10 @@
 import React from "react";
 import "./bartender.scss";
+import "../../sass/partials/layout/_main.scss";
 
 function Atwork(props) {
   let result = props.bartenders.map((bartender) => (
-    <div className="box">
+    <div className="wrapperInside">
       <Bartender key={bartender.name} bartenderName={bartender.name} />
 
       {/*<Status key={"status" + bartender.name}
@@ -28,7 +29,7 @@ function Atwork(props) {
     </div>
   ));
   return (
-    <div id="Wrapper">
+    <div className="wrapper">
       <h2>AT THE BAR FOR YOU TODAY</h2>
       <div id="bartenders">{result}</div>
     </div>

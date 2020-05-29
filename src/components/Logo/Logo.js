@@ -5,7 +5,8 @@ class Logo extends React.Component {
     return (
       <div>
         <img
-          style={{ width: 250 }}
+          className="Logo"
+          style={{ width: 200 }}
           width="150"
           height="150"
           src={require(`../../assets/icons/logo.png`)}

@@ -8,6 +8,7 @@ import WaitingList from "./components/WaitingList/WaitingList";
 import popMessage1 from "./components/WaitingList/popMessage1";
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
 import Logo from "./components/Logo/Logo";
+import Announcement from "./components/Announcement/Announcement";
 
 import "./App.scss";
 
@@ -62,27 +63,36 @@ function App() {
 
   return (
     <div className="App">
-      <div className="item a">
-        <Logo />
+      <div className="containerAll">
+        <div className="wrapperAll">
+          <div className="item">
+            <Logo />
+            <Announcement />
+          </div>
+          <div className="item">
+            <MostPopularBeer
+              currentQueue={queue}
+              taps={taps}
+              setamountSold={setamountSold}
+            />
+          </div>
+          <div className="item">
+            <HappynessBar amountSold={amountSold} />
+          </div>
+        </div>
+        <div className="">
+          <div className="item">
+            <Atwork bartenders={bartenders} />
+          </div>
+        </div>
       </div>
-      <div className="item b">
-        <MostPopularBeer
-          currentQueue={queue}
-          taps={taps}
-          setamountSold={setamountSold}
-        />
-      </div>
-      <div className="item c">
-        <HappynessBar amountSold={amountSold} />
-      </div>
-      <div className="item d">
-        <WaitingList currentQueue={queue} currentServing={serving} />
-      </div>
-      <div className="item e">
-        <BeerDisplay taps={taps} />
-      </div>
-      <div className="item f">
-        <Atwork bartenders={bartenders} />
+      <div className="containerRight">
+        <div className="item">
+          <WaitingList currentQueue={queue} currentServing={serving} />
+        </div>
+        <div className="item">
+          <BeerDisplay taps={taps} />
+        </div>
       </div>
     </div>
   );

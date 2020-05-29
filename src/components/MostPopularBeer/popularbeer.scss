@@ -1,30 +1,25 @@
 @import "../../sass/partials/abstracts/mixins";
+@import "../../sass/partials/layout/main";
+
+.wrapperPeddestal {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+}
 
 .peddeestal {
-  margin: var(--margin-large);
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  //width: 450px;
-
   div {
     @include flexCenter(center, flex-end);
     flex-direction: column;
   }
 }
 
-.WRAPPER {
-  position: relative;
-  @include flexCenter(center, center);
-  flex-direction: column;
-  border-radius: var(--border-radius);
-  background: var(--color-2-normal);
-  margin: var(--margin);
-  padding: var(--padding);
-  box-shadow: var(--box-shadow-neo);
-}
-
 .stage {
   background-color: var(--color-6-normal);
+  width: 100%;
+  height: 300px;
   align-self: flex-end;
   color: var(--text-h2-color);
   border-radius: 3px;
@@ -32,24 +27,25 @@
 }
 
 .secondPlace {
-  height: 100px;
+  height: 90px;
   grid-area: 2/1;
   font-size: 3rem;
 }
 
 .thirdPlace {
-  height: 80px;
+  height: 70px;
   font-size: 3rem;
   align-self: flex-end;
 }
 
 .firstPlace {
-  height: 150px;
+  height: 120px;
   font-size: 5rem;
 }
 
 .confettiContainer,
 .beer:first-of-type {
+  max-height: 250px;
   margin-left: -10px;
   margin-right: -10px;
   grid-area: 1/2;
@@ -94,7 +90,7 @@
 }
 
 .beerImg {
-  width: 100px;
+  width: 80px;
   animation: changeBeer 1s linear forwards 1;
   opacity: 0;
 }

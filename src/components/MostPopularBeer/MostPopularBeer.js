@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./popularbeer.scss";
 import Confetti from "./Confetti";
+import "../../sass/partials/layout/_main.scss";
 
 export default React.memo(function MostPopularBeer(props) {
   const [orders, setOrders] = useState([]);
@@ -78,20 +79,21 @@ export default React.memo(function MostPopularBeer(props) {
   ));
 
   return (
-    <div className="WRAPPER">
+    <div className="wrapper">
       <h2>YOUR TOP PICKS</h2>
+      <div className="wrapperPeddestal">
+        <div className="peddeestal">
+          {topBeersDisplay}
+          <div className="confettiContainer">
+            <Confetti
+              topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
+            />
+          </div>
 
-      <div className="peddeestal">
-        {topBeersDisplay}
-        <div className="confettiContainer">
-          <Confetti
-            topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
-          />
+          <div className="secondPlace stage">2</div>
+          <div className="firstPlace stage">1</div>
+          <div className="thirdPlace stage">3</div>
         </div>
-
-        <div className="secondPlace stage">2</div>
-        <div className="firstPlace stage">1</div>
-        <div className="thirdPlace stage">3</div>
       </div>
     </div>
   );

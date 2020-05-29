@@ -6,16 +6,6 @@
   justify-content: flex-end;
 }
 
-.wrapper {
-  width: auto;
-  height: 100%;
-  position: relative;
-  margin: var(--margin);
-  padding: var(--padding);
-  box-shadow: var(--box-shadow-neo);
-  border-radius: var(--border-radius);
-}
-
 .wrapperBeersStatus {
   grid-template-columns: repeat(auto-fill, minmax(auto, 350px));
   display: grid;
