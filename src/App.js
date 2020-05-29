@@ -76,7 +76,7 @@ function App() {
               setamountSold={setamountSold}
             />
           </div>
-          <div className="item">
+          <div className="item happynessItem">
             <HappynessBar amountSold={amountSold} />
           </div>
         </div>
