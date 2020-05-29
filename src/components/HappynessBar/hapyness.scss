@@ -1,3 +1,7 @@
+.happynessItem {
+  display: flex;
+}
+
 .happyText {
   opacity: 0;
   font-family: var(--secondary-font);
@@ -5,6 +9,17 @@
 
 .happyTextAnimation {
   animation: textColor 1s linear forwards 1;
+}
+
+.happymeterContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @keyframes textColor {

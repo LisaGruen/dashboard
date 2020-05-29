@@ -4,7 +4,7 @@ import "../../sass/partials/layout/_main.scss";
 
 function Atwork(props) {
   let result = props.bartenders.map((bartender) => (
-    <div className="wrapperInside">
+    <div key={bartender.name} className="wrapperInside">
       <Bartender key={bartender.name} bartenderName={bartender.name} />
 
       {/*<Status key={"status" + bartender.name}
@@ -22,7 +22,7 @@ function Atwork(props) {
         servingCustomer={bartender.servingCustomer}
         usingTap={bartender.usingTap}
       />
-      <servingCustomer
+      <ServingCustomer
         key={"serving" + bartender.name}
         bartenderDetail={bartender.servingCustomer}
       />
@@ -62,13 +62,7 @@ function Face(props) {
 
   return (
     <div className="portrait">
-      <img
-        style={{ width: 150 }}
-        width="150"
-        height="150"
-        src={statusFace}
-        alt="portrait bartender"
-      />
+      <img width="100" height="100" src={statusFace} alt="portrait bartender" />
     </div>
   );
 }
@@ -96,7 +90,7 @@ function StatusDetail(props) {
   return <h3>{statusText}</h3>;
 }
 
-function servingCustomer(props) {
+function ServingCustomer(props) {
   return <h3>{props.servingCustomer}</h3>;
 }
 

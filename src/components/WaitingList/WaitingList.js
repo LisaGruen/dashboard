@@ -11,7 +11,6 @@ const ImgArray2 = [
 ];
 
 export default function WaitingList(props) {
-  //console.log(props.currentQueue);
   if (props.currentQueue.length > 0) {
     //if there are no orders in the queue
     randomImg = Math.floor(Math.random() * 3); //randomly shows one of the three images when there're no orders in the queue
@@ -53,13 +52,12 @@ export default function WaitingList(props) {
     );
   } else {
     img = ImgArray2[randomImg]; //show one, randomly chosen image from ImgArray2
-    console.log(randomImg);
     return (
       <div className="wrapper">
         <h2></h2>
         <h2 className="popMessage"></h2>
         <div className="">
-          <img className="cheersImg popMessage " src={img} />
+          <img className="cheersImg popMessage " src={img} alt="Waiting" />
         </div>
         <h2>BEER IS READY!</h2>{" "}
         <div className="container2 border2">

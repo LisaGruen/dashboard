@@ -79,7 +79,7 @@ export default React.memo(function MostPopularBeer(props) {
   ));
 
   return (
-    <div className="wrapper">
+    <div className="wrapper wrapperMostPopularBeer">
       <h2>YOUR TOP PICKS</h2>
       <div className="wrapperPeddestal">
         <div className="peddeestal">

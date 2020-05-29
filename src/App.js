@@ -65,18 +65,18 @@ function App() {
     <div className="App">
       <div className="containerAll">
         <div className="wrapperAll">
-          <div className="item">
+          <div className="item logoandAnnoucmentWrapper">
             <Logo />
             <Announcement />
           </div>
-          <div className="item">
+          <div className="item mosPopularBeerItem">
             <MostPopularBeer
               currentQueue={queue}
               taps={taps}
               setamountSold={setamountSold}
             />
           </div>
-          <div className="item">
+          <div className="item happynessItem">
             <HappynessBar amountSold={amountSold} />
           </div>
         </div>
@@ -87,10 +87,10 @@ function App() {
         </div>
       </div>
       <div className="containerRight">
-        <div className="item">
+        <div className="item waitingListItem">
           <WaitingList currentQueue={queue} currentServing={serving} />
         </div>
-        <div className="item">
+        <div className="item beerLeftItem">
           <BeerDisplay taps={taps} />
         </div>
       </div>

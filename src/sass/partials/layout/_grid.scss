@@ -1,9 +1,6 @@
 // --------------------------------------------
 // This file contains main grid styles
 // --------------------------------------------
-body {
-  margin: 30px;
-}
 
 .App {
   display: grid;
@@ -42,7 +39,7 @@ body {
   }
   .containerAll {
     display: grid;
-    height: 100vh;
+    height: auto;
     grid-template-columns: 100%;
   }
 
