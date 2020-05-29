@@ -7,6 +7,14 @@
   animation: textColor 1s linear forwards 1;
 }
 
+.happymeterContainer {
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @keyframes textColor {
   0% {
     opacity: 0;

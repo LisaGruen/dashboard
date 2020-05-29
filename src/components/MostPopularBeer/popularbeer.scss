@@ -1,6 +1,12 @@
 @import "../../sass/partials/abstracts/mixins";
 @import "../../sass/partials/layout/main";
 
+.wrapperMostPopularBeer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .wrapperPeddestal {
   padding-left: var(--padding);
   padding-right: var(--padding);

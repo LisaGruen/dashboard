@@ -66,7 +66,7 @@ export default function HappynessBar(props) {
   const textAnimation = (amountOfBeer) =>
     props.amountSold > amountOfBeer && "happyTextAnimation";
   return (
-    <div className="wrapper">
+    <div className="wrapper happymeterContainer">
       <h2> HOW ARE WE TODAY ? </h2>{" "}
       <div className="wrapperInside">
         <HappyAnimation
