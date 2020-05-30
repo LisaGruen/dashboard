@@ -58,6 +58,18 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .peddeestal > div {
+    width: 80px;
+  }
+}
+
+@media (max-width: 850px) {
+  .peddeestal > div {
+    width: 70px;
+  }
+}
+
 @media (max-width: 800px) {
   .App {
     display: grid;
@@ -85,5 +97,15 @@
     width: 100%;
     height: 100%;
     grid-template-columns: 100%;
+  }
+}
+
+@media (min-width: 780px) {
+  .peddeestal > div {
+    width: 100%;
+  }
+
+  .peddeestal {
+    margin-top: 110px;
   }
 }

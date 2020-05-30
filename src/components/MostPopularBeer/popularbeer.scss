@@ -26,10 +26,19 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  div {
-    @include flexCenter(flex-end, flex-end);
-    flex-direction: column;
+
+  .confettiContainer {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-self: center;
+    flex-direction: row;
   }
+}
+
+.peddeestal > div {
+  @include flexCenter(flex-end, flex-end);
+  flex-direction: column;
 }
 
 .stage {
@@ -82,7 +91,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    transform: translateY(25px);
+    transform: translateY(-22px);
   }
 }
 
@@ -131,9 +140,8 @@
 }
 
 .confetti {
-  width: 5px;
-  height: 10px;
-  transform: skew(10deg);
+  width: 5px !important;
+  height: 10px !important;
   position: relative;
   //top: 130px;
 }
