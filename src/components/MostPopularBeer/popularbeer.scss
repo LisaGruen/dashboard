@@ -71,6 +71,7 @@
   transform: scale(1);
   transform-origin: center;
   opacity: 1;
+  justify-self: center;
 }
 
 .beer {
@@ -120,6 +121,7 @@
   width: 80px;
   animation: changeBeer 1s linear forwards 1;
   opacity: 0;
+  justify-self: center;
 }
 
 @keyframes changeBeer {
