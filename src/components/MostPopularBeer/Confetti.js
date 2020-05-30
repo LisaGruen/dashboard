@@ -17,14 +17,14 @@ export default React.memo(function Confetti(props) {
       const classSelectname = item.props.className.split(" ")[1];
       const tl = gsap.timeline({ repeat: 0 });
       tl.to(`.${classSelectname}`, {
-        x: "random(-80, 80)",
+        x: "random(-50, 50)",
         y: 0,
         backgroundColor: "transparent",
         duration: "random(0.3, 2)",
         ease: "slow",
       });
       tl.to(`.${classSelectname}`, {
-        x: "random(-80, 80)",
+        x: "random(-50, 50)",
         y: "random(200, 100)",
         backgroundColor: gsap.utils.random([
           "red",

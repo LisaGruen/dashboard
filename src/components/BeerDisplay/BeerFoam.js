@@ -26,8 +26,6 @@ export default React.memo(function BeerFoam(props) {
         ? "#ecf778"
         : "#ff6860";
 
-    console.log(fillColor);
-
     setfillColorStatus(fillColor);
   }, [props.levelOntap]);
 

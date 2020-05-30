@@ -20,6 +20,13 @@
     align-items: center;
     justify-content: center;
   }
+
+  .wrapperInside {
+    margin-top: 80px;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @keyframes textColor {
@@ -207,4 +214,17 @@
   animation-fill-mode: both;
   animation-duration: 5s;
   animation-delay: 3.5s;
+}
+
+.beerMeterFull {
+  position: fixed;
+  background-color: #4b49c2ab;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
