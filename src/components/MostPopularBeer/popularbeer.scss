@@ -28,8 +28,9 @@
 .peddeestal {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
   min-width: 210px;
+  max-width: 330px;
 
   // grid-template-columns: repeat(3, 1fr);
 
