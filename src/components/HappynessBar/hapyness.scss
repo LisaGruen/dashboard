@@ -20,6 +20,13 @@
     align-items: center;
     justify-content: center;
   }
+
+  .wrapperInside {
+    margin-top: 80px;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 @keyframes textColor {
