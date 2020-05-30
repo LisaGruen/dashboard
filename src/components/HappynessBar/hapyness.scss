@@ -15,6 +15,10 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+
+  h2 {
+    margin-bottom: 100px;
+  }
   #container {
     display: flex;
     align-items: center;
