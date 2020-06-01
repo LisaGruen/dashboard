@@ -46,6 +46,7 @@
   // Purple #504ECC
   --base-color-2: 241;
   --color-2-normal: hsla(var(--base-color-2) 55% 55% / 100%);
+  --color-2-light: hsla(var(--base-color-2) 90% 90% / 100%);
   --shadow-2-normal: hsla(var(--base-color-2) 45% 45% / 50%);
   // Gray #5C665A
   --base-color-3: 110;
@@ -60,8 +61,8 @@
   --color-5-normal: hsla(var(--base-color-4) 100% 69% / 100%);
 
   // Yellow #FAFFC7
-  --base-color-4: 65;
-  --color-6-normal: hsla(var(--base-color-4) 100% 89% / 100%);
+  --base-color-4: 41;
+  --color-6-normal: hsla(var(--base-color-4) 100% 55% / 100%);
   --color-6-lighter: hsla(var(--base-color-4) 100% 95% / 100%);
 
   // White

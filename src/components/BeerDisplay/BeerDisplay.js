@@ -45,8 +45,9 @@ export default function BeerDisplay(props) {
   ));
   return (
     <div className="wrapper beerDisplayWrapper">
-      <h2>BEER LEFT ON THE TAP</h2>
-      <h3>Subheadline</h3>
+      <h2>ON THE MENU TONIGHT</h2>
+      <h3>Beer left on the tap</h3>
+
       <div className="wrapperBeersStatus">{beerCards}</div>
     </div>
   );
