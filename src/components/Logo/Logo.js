@@ -1,5 +1,5 @@
 // Logo Animation Lottie
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "../../assets/lottifiles/data08.json";
 
