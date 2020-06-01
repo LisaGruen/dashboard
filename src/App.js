@@ -11,6 +11,7 @@ import Announcement from "./components/Announcement/Announcement";
 
 import "./App.scss";
 import Logoanimation from "./components/Logo/Logo";
+import Preloader from "./components/Logo/Preloader";
 
 function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
@@ -63,6 +64,7 @@ function App() {
 
   return (
     <div className="App">
+      <Preloader />
       <div className="containerAll">
         <div className="wrapperAll">
           <div className="item logoandAnnoucmentWrapper">
