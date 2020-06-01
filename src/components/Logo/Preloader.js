@@ -1,12 +1,10 @@
 // Logo Animation Lottie
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import Lottie from "react-lottie";
 import animationData from "../../assets/lottifiles/data08.json";
 import "./Preloader.scss";
 
 export default React.memo(function Preloader() {
-  const [isStopped, setisStopped] = useState(false);
-
   const defaultOptions = {
     loop: false,
     autoplay: true,
