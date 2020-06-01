@@ -40,10 +40,13 @@
       margin-top: -5px;
     }
   }
+}
+.beerLeft {
+  margin-top: 20px;
+}
 
-  svg {
-    filter: drop-shadow(2px 4px 6px #13123a);
-  }
+svg {
+  filter: drop-shadow(5px 4px 10px #34344d);
 }
 
 .beerGlass {

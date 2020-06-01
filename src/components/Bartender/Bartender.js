@@ -15,7 +15,7 @@ function Atwork(props) {
         name={bartender.name}
         bartenderDetail={bartender.statusDetail}
       />
-      <h2>Status</h2>
+      <h3>Status</h3>
       <StatusDetail
         key={"detail" + bartender.name}
         bartenderDetail={bartender.statusDetail}
@@ -30,7 +30,8 @@ function Atwork(props) {
   ));
   return (
     <div className="wrapper">
-      <h2>AT THE BAR FOR YOU TODAY</h2>
+      <h2>AT THE BAR FOR YOU</h2>
+      <h3>Staff working today</h3>
       <div id="bartenders">{result}</div>
     </div>
   );
@@ -78,7 +79,7 @@ function StatusDetail(props) {
   } else if (props.bartenderDetail === "waiting") {
     statusText = "Waiting!";
   } else if (props.bartenderDetail === "receivePayment") {
-    statusText = "Receiving payment from customer #" + props.servingCustomer;
+    statusText = "Payment from customer #" + props.servingCustomer;
   } else if (props.bartenderDetail === "releaseTap") {
     statusText = "Releasing tap #" + props.usingTap;
   } else if (props.bartenderDetail === "reserveTap") {

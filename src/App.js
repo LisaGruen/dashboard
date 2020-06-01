@@ -7,10 +7,10 @@ import HappynessBar from "./components/HappynessBar/HappynessBar";
 import WaitingList from "./components/WaitingList/WaitingList";
 import popMessage1 from "./components/WaitingList/popMessage1";
 import BeerDisplay from "./components/BeerDisplay/BeerDisplay";
-import Logo from "./components/Logo/Logo";
 import Announcement from "./components/Announcement/Announcement";
 
 import "./App.scss";
+import Logoanimation from "./components/Logo/Logo";
 
 function App() {
   const [barNameAndTime, setbarNameAndTime] = useState({});
@@ -66,7 +66,7 @@ function App() {
       <div className="containerAll">
         <div className="wrapperAll">
           <div className="item logoandAnnoucmentWrapper">
-            <Logo />
+            <Logoanimation />
             <Announcement />
           </div>
           <div className="item mosPopularBeerItem">

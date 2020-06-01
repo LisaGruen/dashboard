@@ -24,6 +24,7 @@ export default function BeerCard(props) {
             </div>
           </div>
           <BeerFoam levelOntap={levelOntap} id={id} />
+          <h3 className="beerLeft">20l left on the tap</h3>
         </div>
       </div>
     </div>

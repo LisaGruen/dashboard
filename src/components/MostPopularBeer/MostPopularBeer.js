@@ -81,6 +81,7 @@ export default React.memo(function MostPopularBeer(props) {
   return (
     <div className="wrapper wrapperMostPopularBeer">
       <h2>YOUR TOP PICKS</h2>
+      <h3>Most popular beer tonight</h3>
       <div className="wrapperPeddestal">
         <div className="peddeestal">
           {topBeersDisplay}

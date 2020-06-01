@@ -21,10 +21,10 @@ export default React.memo(function BeerFoam(props) {
   useEffect(() => {
     const fillColor =
       props.levelOntap > 1700
-        ? "#68cd4e"
+        ? "#FAFFC7"
         : props.levelOntap > 1000
-        ? "#ecf778"
-        : "#ff6860";
+        ? "#FAFFC7"
+        : "#FAFFC7";
 
     setfillColorStatus(fillColor);
   }, [props.levelOntap]);
@@ -35,14 +35,16 @@ export default React.memo(function BeerFoam(props) {
       width={300}
       height={150}
       style={{ position: "absolute" }}
-      viewBox="0 0 421.875 198.377">
+      viewBox="0 0 421.875 198.377"
+    >
       <defs>
         <filter
           x={0}
           y={0}
           width={300}
           height={150}
-          filterUnits="userSpaceOnUse">
+          filterUnits="userSpaceOnUse"
+        >
           <feOffset dx={10} dy={10} />
           <feGaussianBlur stdDeviation={10} result="blur" />
           <feFlood floodOpacity={0.161} />
@@ -72,7 +74,8 @@ export default React.memo(function BeerFoam(props) {
 
       <g
         id={"clipPathReveal" + props.id}
-        clipPath={`url(#theClipPath${props.id})`}>
+        clipPath={`url(#theClipPath${props.id})`}
+      >
         <path
           className={"pathFoam" + props.id}
           fill="#fff"

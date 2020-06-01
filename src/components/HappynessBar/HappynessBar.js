@@ -67,7 +67,8 @@ export default function HappynessBar(props) {
     props.amountSold > amountOfBeer && "happyTextAnimation";
   return (
     <div className="wrapper happymeterContainer">
-      <h2> HOW ARE WE TODAY ? </h2>{" "}
+      <h2>HOW ARE WE TODAY?</h2>
+      <h3>Beer consumption in total</h3>{" "}
       <div className="wrapperInside">
         <HappyAnimation
           amountSold={props.amountSold}

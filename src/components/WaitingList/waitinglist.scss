@@ -4,19 +4,21 @@
   height: auto;
   text-align: center;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33% 33% 33%;
 }
 
 .border1 {
   /*border: 1px solid rgba($color: white, $alpha: 0.3);*/
   border-radius: 15px;
-  background-color: rgba($color: white, $alpha: 0.3);
+  height: 70px;
+  //background-color: rgba($color: white, $alpha: 0.3);
 }
 
 .border2 {
   /*border: 1px solid var(--color-5-normal);*/
-  background-color: var(--color-5-normal);
+  //background-color: var(--color-5-normal);
   border-radius: 15px;
+  height: 70px;
 }
 
 .myTable {
@@ -32,9 +34,9 @@
   animation-name: scale-in-center;*/
   height: auto;
   text-align: center;
-  margin: 5px;
-  padding: 8px 11px 11px 10px;
-  float: left;
+  //margin: 2px;
+  //padding: 8px 11px 11px 10px;
+  //float: left;
   position: relative;
 }
 
@@ -50,16 +52,29 @@
 .popMessage {
   /*animation-duration: 1s;
   animation-name: scale-in-center;*/
+  width: auto;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  height: 180px;
 }
 
 .imageContainer {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  height: 180px;
+  width: auto;
 }
 
 .cheersImg {
-  width: 200px;
+  width: auto;
+  height: 180px;
   //align-self: flex-end;
+  align-items: center;
+}
+
+.readyHeadline {
+  margin-top: 30px;
 }
 
 .scale-in-center {
