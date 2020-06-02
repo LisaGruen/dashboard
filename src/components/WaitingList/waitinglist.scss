@@ -10,7 +10,7 @@
 .border1 {
   /*border: 1px solid rgba($color: white, $alpha: 0.3);*/
   border-radius: 15px;
-  height: 70px;
+  height: 50px;
   //background-color: rgba($color: white, $alpha: 0.3);
 }
 
@@ -18,7 +18,7 @@
   /*border: 1px solid var(--color-5-normal);*/
   //background-color: var(--color-5-normal);
   border-radius: 15px;
-  height: 70px;
+  height: 50px;
 }
 
 .myTable {
@@ -53,24 +53,25 @@
   /*animation-duration: 1s;
   animation-name: scale-in-center;*/
   width: auto;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  height: 180px;
+  height: 90px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .imageContainer {
   display: flex;
   align-items: center;
-  height: 180px;
+  height: 90px;
   width: auto;
-}
 
-.cheersImg {
-  width: auto;
-  height: 180px;
-  //align-self: flex-end;
-  align-items: center;
+  .cheersImg {
+    width: auto;
+    height: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .readyHeadline {

@@ -1,6 +1,8 @@
 #bartenders {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 50px;
+
   .wrapperInside {
     display: flex;
     flex-direction: column;
@@ -13,9 +15,21 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: 10px;
 
   img {
     width: 100px;
     height: 100px;
   }
+}
+
+.wrapperBartender {
+  width: 50px;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+
+  margin-top: var(--margin);
+  padding: var(--padding);
+  box-shadow: var(--box-shadow-neo2);
+  border-radius: var(--border-radius);
 }

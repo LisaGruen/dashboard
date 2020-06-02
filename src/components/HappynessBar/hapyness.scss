@@ -13,11 +13,12 @@
 
 .happymeterContainer {
   display: flex;
-  justify-content: space-around;
+  //justify-content: space-around;
   flex-direction: column;
 
   #container {
     display: flex;
+    margin-top: 100px;
     align-items: center;
     justify-content: center;
   }
@@ -64,7 +65,7 @@
 #container .happyness-level > div {
   margin: 1.2rem 0;
   position: relative;
-  color: #edaf32;
+  color: white;
 }
 
 #beaker {

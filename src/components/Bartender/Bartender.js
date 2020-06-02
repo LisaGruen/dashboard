@@ -9,13 +9,12 @@ function Atwork(props) {
 
       {/*<Status key={"status" + bartender.name}
         bartenderStatus={bartender.status}/>*/}
-
       <Face
         key={"face" + bartender.name}
         name={bartender.name}
         bartenderDetail={bartender.statusDetail}
       />
-      <h3>Status</h3>
+      {/*<h3>Status</h3>*/}
       <StatusDetail
         key={"detail" + bartender.name}
         bartenderDetail={bartender.statusDetail}
@@ -38,7 +37,7 @@ function Atwork(props) {
 }
 
 function Bartender(props) {
-  return <h3>{props.bartenderName}</h3>;
+  return <h2>{props.bartenderName}</h2>;
 }
 
 function Face(props) {
