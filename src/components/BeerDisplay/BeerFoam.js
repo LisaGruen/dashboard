@@ -21,10 +21,10 @@ export default React.memo(function BeerFoam(props) {
   useEffect(() => {
     const fillColor =
       props.levelOntap > 1700
-        ? "#FAFFC7"
+        ? "#ffae00"
         : props.levelOntap > 1000
-        ? "#FAFFC7"
-        : "#FAFFC7";
+        ? "#ffae00"
+        : "#ffae00";
 
     setfillColorStatus(fillColor);
   }, [props.levelOntap]);

@@ -79,21 +79,23 @@ export default React.memo(function MostPopularBeer(props) {
   ));
 
   return (
-    <div className="wrapper wrapperMostPopularBeer">
+    <div className="wrapper">
       <h2>YOUR TOP PICKS</h2>
       <h3>Most popular beer tonight</h3>
-      <div className="wrapperPeddestal">
-        <div className="peddeestal">
-          {topBeersDisplay}
-          <div className="confettiContainer">
-            <Confetti
-              topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
-            />
-          </div>
+      <div className="wrapperMostPopularBeer">
+        <div className="wrapperPeddestal">
+          <div className="peddeestal">
+            {topBeersDisplay}
+            <div className="confettiContainer">
+              <Confetti
+                topThreebeers={topThreebeers[0] ? topThreebeers[0].name : " "}
+              />
+            </div>
 
-          <div className="secondPlace stage">2</div>
-          <div className="firstPlace stage">1</div>
-          <div className="thirdPlace stage">3</div>
+            <div className="secondPlace stage">2</div>
+            <div className="firstPlace stage">1</div>
+            <div className="thirdPlace stage">3</div>
+          </div>
         </div>
       </div>
     </div>

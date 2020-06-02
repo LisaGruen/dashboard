@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Lottie from "react-lottie";
-import animationData from "../../assets/lottifiles/chers.json";
+import animationData from "../../assets/lottifiles/datacheers.json";
 // Formik
 // https://assets6.lottiefiles.com/temp/lf20_8LnHcw.json
 

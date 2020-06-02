@@ -17,23 +17,25 @@ export default React.memo(function Logoanimation() {
 
   return (
     <div>
-      <Lottie
-        options={defaultOptions}
-        height={350}
-        width={350}
-        isStopped={isStopped}
-        eventListeners={[
-          {
-            eventName: "complete",
-            callback: () => {
-              setTimeout(() => {
-                setisStopped(true);
-                setisStopped(false);
-              }, 20000);
+      <div className="wrapper">
+        <Lottie
+          options={defaultOptions}
+          height={250}
+          width={250}
+          isStopped={isStopped}
+          eventListeners={[
+            {
+              eventName: "complete",
+              callback: () => {
+                setTimeout(() => {
+                  setisStopped(true);
+                  setisStopped(false);
+                }, 20000);
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      </div>
     </div>
   );
 });

@@ -1,12 +1,16 @@
 // --------------------------------------------
 // This file contains main grid styles
 // --------------------------------------------
+body {
+  background-color: var(--color-2-light);
+}
 
 .App {
   display: grid;
   width: 100%;
   height: auto;
   grid-template-columns: 60% 40%;
+  background-color: var(--color-2-light);
 }
 .containerAll {
   display: grid;
@@ -16,6 +20,8 @@
 .containerRight {
   display: grid;
   grid-template-columns: 50% 50%;
+  height: auto;
+  width: auto;
 }
 
 .wrapperAll {
@@ -28,6 +34,10 @@
 .item {
   border-radius: 3px;
   align-self: stretch;
+}
+
+div.item {
+  background-color: var(--color-2-light);
 }
 
 @media (max-width: 1500px) {
