@@ -31,3 +31,12 @@
 .beerLeftItem {
   margin: 0 var(--margin);
 }
+
+.beerLeftItem {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
