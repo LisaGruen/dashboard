@@ -3,7 +3,6 @@ const GetBeerTypes = async (functionToset) => {
     "https://more-beers-less-tears-data.herokuapp.com/beertypes"
   );
   const data = await res.json();
-  console.log("called");
 
   functionToset(data);
 };

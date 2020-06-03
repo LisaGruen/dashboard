@@ -7,14 +7,11 @@ function Atwork(props) {
     <div key={bartender.name} className="wrapperInside">
       <Bartender key={bartender.name} bartenderName={bartender.name} />
 
-      {/*<Status key={"status" + bartender.name}
-        bartenderStatus={bartender.status}/>*/}
       <Face
         key={"face" + bartender.name}
         name={bartender.name}
         bartenderDetail={bartender.statusDetail}
       />
-      {/*<h3>Status</h3>*/}
       <StatusDetail
         key={"detail" + bartender.name}
         bartenderDetail={bartender.statusDetail}
@@ -66,10 +63,6 @@ function Face(props) {
     </div>
   );
 }
-
-/*function Status(props) {
-  return <h3>{props.bartenderStatus}</h3>;
-}*/
 
 function StatusDetail(props) {
   let statusText = "";
