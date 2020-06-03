@@ -39,5 +39,3 @@ export default React.memo(function Logoanimation() {
     </div>
   );
 });
-
-// export default Logoanimation;

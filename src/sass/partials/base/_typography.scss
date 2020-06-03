@@ -20,9 +20,12 @@ p {
 
 h1 {
   font-family: var(--primary-font);
-  font-size: var(--base-font-size);
-  color: var(--text-h1-color);
+  color: white;
   letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5vw;
+  margin-bottom: 100px;
 }
 
 h2 {

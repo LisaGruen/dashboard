@@ -25,5 +25,3 @@ export default React.memo(function Preloader() {
     </div>
   );
 });
-
-// export default Logoanimation;

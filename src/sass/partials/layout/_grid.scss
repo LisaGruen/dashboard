@@ -68,7 +68,7 @@ div.item {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .App {
     display: grid;
     width: 100%;
@@ -105,5 +105,10 @@ div.item {
 
   .peddeestal div.stage {
     width: 100px;
+  }
+  .wrapper {
+    .wrapperMostPopularBeer {
+      margin-top: 70px;
+    }
   }
 }

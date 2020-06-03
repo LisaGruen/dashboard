@@ -67,7 +67,7 @@ export default function HappynessBar(props) {
     props.amountSold > amountOfBeer && "happyTextAnimation";
   return (
     <div className="wrapper happymeterContainer">
-      <h2>HOW ARE WE TODAY?</h2>
+      <h2>HAPPINESS-BAR-O-METER</h2>
       <h3>Beer consumption in total</h3>{" "}
       <div className="wrapperInside">
         <HappyAnimation
@@ -76,7 +76,6 @@ export default function HappynessBar(props) {
         />{" "}
         <div id="container">
           <div className="pour"> </div>{" "}
-          {/* <h2 className=" hapLevel">Happyness level</h2> */}
           <div id="beaker" ref={beaker}>
             <div className="beer-foam"> {foam} </div>
             <div id="liquid"> {bubbles} </div>
