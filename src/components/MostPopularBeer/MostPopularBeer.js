@@ -37,17 +37,24 @@ export default React.memo(function MostPopularBeer(props) {
     const beers = beerNames.map((beerName) => {
       //get the amount beers repeating
       const sameBeerNameRepeat = orderedBeers.filter(
-        (ordBeer) => beerNames === ordBeer.name
+        (ordBeer) => beerName === ordBeer
       );
+
       //get the level on tap for each beer smallest amount
       const levelOnTap = props.taps
         .filter((tapBeer) => tapBeer.beer === beerName)
         .sort((a, b) => a.level - b.level);
+      // console.log(sameBeerNameRepeat);
+
       return {
         id: i++,
         name: beerName,
         count: sameBeerNameRepeat.length,
-        levelOntap: levelOnTap[0].level,
+        levelOntap:
+          levelOnTap
+            .map((beerOnTap) => beerOnTap.level)
+            .reduce((beerLevelA, beerLevelB) => beerLevelA + beerLevelB, 0) /
+          levelOnTap.length,
       };
     });
 
