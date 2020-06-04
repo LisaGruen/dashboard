@@ -4,8 +4,8 @@
   height: auto;
   text-align: center;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  gap: 2%;
+  grid-template-columns: repeat(auto-fill, minmax(auto, 33%));
+  gap: 20%;
 }
 
 .border1 {
@@ -23,13 +23,17 @@
   height: auto;
 }
 
-.serving,
-.queue {
-  font-size: 2em;
-  font-weight: bold;
-  height: auto;
+.waitingListItem,
+.queue,
+.serving {
   text-align: center;
   position: relative;
+  color: lightyellow;
+  font-size: 1.3em;
+  font-weight: bold;
+  animation-duration: 1s;
+  animation-name: scale-in-center;
+  text-align: center;
 }
 
 .queue {
