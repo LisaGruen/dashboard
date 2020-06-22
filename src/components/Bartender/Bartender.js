@@ -1,5 +1,6 @@
 import React from "react";
 import "./bartender.scss";
+import BartenderPortrait from "./BartenderPortrait";
 import "../../sass/partials/layout/_main.scss";
 
 function Atwork(props) {
@@ -13,6 +14,7 @@ function Atwork(props) {
         bartenderDetail={bartender.statusDetail}
       />
       <StatusDetail
+        id="statusDetail"
         key={"detail" + bartender.name}
         bartenderDetail={bartender.statusDetail}
         servingCustomer={bartender.servingCustomer}
@@ -39,15 +41,15 @@ function Bartender(props) {
 
 function Face(props) {
   const bartenderFaces = {
-    Dannie_waiting: require(`../../assets/icons/bartenderDannieWaiting.png`),
-    Jonas_waiting: require(`../../assets/icons/bartenderJonasWaiting.png`),
-    Peter_waiting: require(`../../assets/icons/bartenderPeterWaiting.png`),
-    Dannie_default: require(`../../assets/icons/bartenderDannie.png`),
-    Jonas_default: require(`../../assets/icons/bartenderJonas.png`),
-    Peter_default: require(`../../assets/icons/bartenderPeter.png`),
-    Dannie_receivePayment: require(`../../assets/icons/bartenderDanniePayment.png`),
-    Jonas_receivePayment: require(`../../assets/icons/bartenderJonasPayment.png`),
-    Peter_receivePayment: require(`../../assets/icons/bartenderPeterPayment.png`),
+    Dannie_waiting: require(`../../assets/icons/bartenderDannieWaiting.svg`),
+    Jonas_waiting: require(`../../assets/icons/bartenderJonasWaiting.svg`),
+    Peter_waiting: require(`../../assets/icons/bartenderPeterWaiting.svg`),
+    Dannie_default: require(`../../assets/icons/bartenderDannie.svg`),
+    Jonas_default: require(`../../assets/icons/bartenderJonas.svg`),
+    Peter_default: require(`../../assets/icons/bartenderPeter.svg`),
+    Dannie_receivePayment: require(`../../assets/icons/bartenderDanniePayment.svg`),
+    Jonas_receivePayment: require(`../../assets/icons/bartenderJonasPayment.svg`),
+    Peter_receivePayment: require(`../../assets/icons/bartenderPeterPayment.svg`),
   };
 
   const fk =
@@ -57,11 +59,18 @@ function Face(props) {
       : "default";
   const statusFace = bartenderFaces[props.name + "_" + fk];
 
-  return (
-    <div className="portrait">
+  const portrait =
+    props.bartenderDetail === "receivePayment" ||
+    props.bartenderDetail === "waiting" ? (
       <img width="100" height="100" src={statusFace} alt="portrait bartender" />
-    </div>
-  );
+    ) : (
+      <BartenderPortrait
+        bartenderName={props.name}
+        status={props.bartenderDetail}
+      />
+    );
+
+  return <div className="portrait">{portrait}</div>;
 }
 
 function StatusDetail(props) {
@@ -73,18 +82,18 @@ function StatusDetail(props) {
   } else if (props.bartenderDetail === "receivePayment") {
     statusText = "Payment from customer #" + props.servingCustomer;
   } else if (props.bartenderDetail === "releaseTap") {
-    statusText = "Releasing tap #" + props.usingTap;
+    statusText = "Releasing tap";
   } else if (props.bartenderDetail === "reserveTap") {
     statusText = "Reserving tap";
   } else if (props.bartenderDetail === "startServing") {
     statusText = "Start to serve";
   }
 
-  return <h3>{statusText}</h3>;
+  return <h4>{statusText}</h4>;
 }
 
 function ServingCustomer(props) {
-  return <h3>{props.servingCustomer}</h3>;
+  return <h4>{props.servingCustomer}</h4>;
 }
 
 export default Atwork;

@@ -9,6 +9,10 @@
     justify-content: center;
     align-items: center;
   }
+  h4 {
+    color: var(--color-3-normal);
+    letter-spacing: 0.1rem;
+  }
 }
 .portrait {
   display: block;
@@ -16,8 +20,10 @@
   margin-right: auto;
   margin-bottom: 20px;
   margin-top: 10px;
+  vertical-align: top;
 
-  img {
+  img,
+  svg {
     width: 100px;
     height: 100px;
   }
@@ -32,4 +38,28 @@
   padding: var(--padding);
   box-shadow: var(--box-shadow-neo2);
   border-radius: var(--border-radius);
+}
+
+.bartender-portrait {
+  .cls-1 {
+    fill: #ffcf34;
+  }
+  .cls-2 {
+    fill: #504ecc;
+  }
+  .cls-3 {
+    fill: #faffc7;
+  }
+  .cls-4 {
+    fill: #fff;
+  }
+  .cls-5 {
+    fill: #ff6961;
+  }
+  .cls-6 {
+    fill: #68cc4e;
+  }
+  .cls-7 {
+    fill: #5c665a;
+  }
 }
